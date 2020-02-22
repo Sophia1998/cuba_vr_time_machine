@@ -6184,8 +6184,8 @@ MonoBehaviour:
     enabled: 1
     target: {fileID: 908722717}
     sensorTransform: {fileID: 1131103070}
-    sensor2TargetPosition: {x: -0.10000019, y: 0.049999557, z: -0.040000066}
-    sensor2TargetRotation: {x: -0.499999, y: -0.49999985, z: -0.5000006, w: 0.5000007}
+    sensor2TargetPosition: {x: -0.10000017, y: 0.049999505, z: -0.040000074}
+    sensor2TargetRotation: {x: -0.49999896, y: -0.49999985, z: -0.5000006, w: 0.5000007}
   stretchlessTarget: {fileID: 0}
   shoulder:
     name: 
@@ -7552,8 +7552,8 @@ MonoBehaviour:
     enabled: 1
     target: {fileID: 990291234}
     sensorTransform: {fileID: 1123463149}
-    sensor2TargetPosition: {x: 0.09999995, y: 0.05000122, z: -0.03999994}
-    sensor2TargetRotation: {x: -0.4999971, y: 0.49999884, z: 0.50000185, w: 0.50000215}
+    sensor2TargetPosition: {x: 0.099999964, y: 0.0500012, z: -0.03999994}
+    sensor2TargetRotation: {x: -0.49999717, y: 0.49999887, z: 0.5000019, w: 0.5000022}
   stretchlessTarget: {fileID: 0}
   shoulder:
     name: 
@@ -14743,7 +14743,7 @@ MonoBehaviour:
   gameController: 0
   animatorEnabled: 1
   animatorController: {fileID: 0}
-  pose: {fileID: 0}
+  pose: {fileID: 11400000, guid: aedcc782a1e3c324d826362d53aeb4da, type: 2}
   editPose: 0
   remoteAvatar: {fileID: 2638678994036115327, guid: adfee84cea0d5b64dab22b1950ad72c6,
     type: 3}
