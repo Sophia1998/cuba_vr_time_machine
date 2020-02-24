@@ -3,8 +3,9 @@
 --- !u!91 &9100000
 AnimatorController:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   m_Name: Everyday_MoCap_01
   serializedVersion: 5
   m_AnimatorParameters: []
@@ -25,8 +26,9 @@ AnimatorController:
 AnimatorState:
   serializedVersion: 5
   m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   m_Name: Sitting_Tired_02
   m_Speed: 1
   m_CycleOffset: 0
@@ -50,8 +52,9 @@ AnimatorState:
 AnimatorState:
   serializedVersion: 5
   m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   m_Name: Sitting_Tired_01
   m_Speed: 1
   m_CycleOffset: 0
@@ -75,8 +78,9 @@ AnimatorState:
 AnimatorState:
   serializedVersion: 5
   m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   m_Name: Sitting_Laughing_02
   m_Speed: 1
   m_CycleOffset: 0
@@ -100,8 +104,9 @@ AnimatorState:
 AnimatorState:
   serializedVersion: 5
   m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   m_Name: Sitting_Down_01
   m_Speed: 1
   m_CycleOffset: 0
@@ -125,8 +130,9 @@ AnimatorState:
 AnimatorState:
   serializedVersion: 5
   m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   m_Name: Sitting_Crying_02
   m_Speed: 1
   m_CycleOffset: 0
@@ -150,8 +156,9 @@ AnimatorState:
 AnimatorState:
   serializedVersion: 5
   m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   m_Name: Sitting_Down_04
   m_Speed: 1
   m_CycleOffset: 0
@@ -175,8 +182,9 @@ AnimatorState:
 AnimatorState:
   serializedVersion: 5
   m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   m_Name: Sitting_Laughing_01
   m_Speed: 1
   m_CycleOffset: 0
@@ -200,8 +208,9 @@ AnimatorState:
 AnimatorState:
   serializedVersion: 5
   m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   m_Name: Sitting_Talking_02
   m_Speed: 1
   m_CycleOffset: 0
@@ -225,8 +234,9 @@ AnimatorState:
 AnimatorState:
   serializedVersion: 5
   m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   m_Name: Sitting_Excited_02
   m_Speed: 1
   m_CycleOffset: 0
@@ -250,8 +260,9 @@ AnimatorState:
 AnimatorState:
   serializedVersion: 5
   m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   m_Name: Sitting_Down_02
   m_Speed: 1
   m_CycleOffset: 0
@@ -275,8 +286,9 @@ AnimatorState:
 AnimatorState:
   serializedVersion: 5
   m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   m_Name: Sitting_Excited_01
   m_Speed: 1
   m_CycleOffset: 0
@@ -300,8 +312,9 @@ AnimatorState:
 AnimatorState:
   serializedVersion: 5
   m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   m_Name: Sitting_Talking_01
   m_Speed: 1
   m_CycleOffset: 0
@@ -325,8 +338,9 @@ AnimatorState:
 AnimatorState:
   serializedVersion: 5
   m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   m_Name: Sitting_Crying_01
   m_Speed: 1
   m_CycleOffset: 0
@@ -350,8 +364,9 @@ AnimatorState:
 AnimatorState:
   serializedVersion: 5
   m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   m_Name: Sitting_Upset_01
   m_Speed: 1
   m_CycleOffset: 0
@@ -375,8 +390,9 @@ AnimatorState:
 AnimatorState:
   serializedVersion: 5
   m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   m_Name: Sitting_Down_03
   m_Speed: 1
   m_CycleOffset: 0
@@ -400,8 +416,9 @@ AnimatorState:
 AnimatorState:
   serializedVersion: 5
   m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   m_Name: Sitting_Talking_03
   m_Speed: 1
   m_CycleOffset: 0
@@ -425,8 +442,9 @@ AnimatorState:
 AnimatorState:
   serializedVersion: 5
   m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   m_Name: Sitting_Upset_02
   m_Speed: 1
   m_CycleOffset: 0
@@ -450,8 +468,9 @@ AnimatorState:
 AnimatorStateMachine:
   serializedVersion: 5
   m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   m_Name: Base Layer
   m_ChildStates:
   - serializedVersion: 1
@@ -477,7 +496,7 @@ AnimatorStateMachine:
     m_Position: {x: 780, y: 372, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 1102821065339228768}
-    m_Position: {x: 288, y: 192, z: 0}
+    m_Position: {x: 290, y: 190, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 1102572236892321032}
     m_Position: {x: 288, y: 252, z: 0}

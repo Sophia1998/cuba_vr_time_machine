@@ -5852,8 +5852,8 @@ MonoBehaviour:
     enabled: 1
     target: {fileID: 2807764392361742224}
     sensorTransform: {fileID: 0}
-    sensor2TargetPosition: {x: 0.099999964, y: 0.049999993, z: -0.040000003}
-    sensor2TargetRotation: {x: -0.5, y: 0.50000006, z: 0.5000001, w: 0.50000006}
+    sensor2TargetPosition: {x: 0.1, y: 0.05, z: -0.04}
+    sensor2TargetRotation: {x: -0.49999994, y: 0.5, z: 0.5, w: 0.49999994}
   stretchlessTarget: {fileID: 0}
   shoulder:
     name: 
@@ -13914,8 +13914,8 @@ MonoBehaviour:
     enabled: 1
     target: {fileID: 2807764393468244618}
     sensorTransform: {fileID: 0}
-    sensor2TargetPosition: {x: -0.10000002, y: 0.050000068, z: -0.039999984}
-    sensor2TargetRotation: {x: -0.49999997, y: -0.5, z: -0.5000001, w: 0.5}
+    sensor2TargetPosition: {x: -0.1, y: 0.05, z: -0.04}
+    sensor2TargetRotation: {x: -0.49999994, y: -0.5, z: -0.5, w: 0.49999994}
   stretchlessTarget: {fileID: 0}
   shoulder:
     name: 

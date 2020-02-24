@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class female : MonoBehaviour
 {
+    Animator animator;
     GameObject player;
     float distance;
     float radius;
@@ -11,6 +12,7 @@ public class female : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        animator = GetComponent<Animator>();
         radius = 3f;
     }
 
@@ -24,6 +26,7 @@ public class female : MonoBehaviour
         if(distance < radius)
         {
             cube.transform.localScale = new Vector3(0.5f, 0.5f, 0.5f);
+            animator.SetTrigger("greet");
         }
     }
 }
