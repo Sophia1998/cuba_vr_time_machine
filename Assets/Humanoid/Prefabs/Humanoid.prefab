@@ -159,6 +159,12 @@ MonoBehaviour:
     enabled: 0
     trackerTransform: {fileID: 0}
     subTrackers: []
+  oculus:
+    status: 0
+    enabled: 1
+    trackerTransform: {fileID: 4532993809319004}
+    subTrackers: []
+    androidDeviceType: 2
   forwardSpeed: 1
   backwardSpeed: 0.6
   sidewardSpeed: 1
@@ -202,7 +208,7 @@ MonoBehaviour:
   controllerType: 0
   fingerMovements: 1
   leftVerticalInput:
-    type: 3
+    type: 2
     targetGameObject: {fileID: 1003187176396958}
     targetComponent: {fileID: 114146988969048474}
     eventType: 6
@@ -234,7 +240,9 @@ MonoBehaviour:
     - Rotate
     - TeleportForward
     - MoveTo
+    - Jump
     objMethodComponents:
+    - {fileID: 114146988969048474}
     - {fileID: 114146988969048474}
     - {fileID: 114146988969048474}
     - {fileID: 114146988969048474}
@@ -259,7 +267,7 @@ MonoBehaviour:
     animatorParameterType: 0
     animatorParameterIndex: 0
   leftHorizontalInput:
-    type: 3
+    type: 2
     targetGameObject: {fileID: 1003187176396958}
     targetComponent: {fileID: 114146988969048474}
     eventType: 6
@@ -291,7 +299,9 @@ MonoBehaviour:
     - Rotate
     - TeleportForward
     - MoveTo
+    - Jump
     objMethodComponents:
+    - {fileID: 114146988969048474}
     - {fileID: 114146988969048474}
     - {fileID: 114146988969048474}
     - {fileID: 114146988969048474}
@@ -893,7 +903,6 @@ SkinnedMeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -1060,7 +1069,6 @@ MeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -2495,7 +2503,6 @@ MeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -2972,7 +2979,6 @@ MeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -3429,7 +3435,6 @@ MeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -3843,7 +3848,6 @@ MeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -4112,7 +4116,6 @@ MeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -4740,6 +4743,19 @@ MonoBehaviour:
     sensor2TargetRotation: {x: 0, y: 0, z: 0, w: 0}
     headAnimation: 1
     faceAnimation: 1
+  oculus:
+    enabled: 1
+    target: {fileID: 0}
+    sensorTransform: {fileID: 0}
+    sensor2TargetPosition: {x: 0, y: 0, z: 0}
+    sensor2TargetRotation: {x: 0, y: 0, z: 0, w: 0}
+    overrideOptitrackPosition: 1
+  microphone:
+    enabled: 1
+    target: {fileID: 0}
+    sensorTransform: {fileID: 0}
+    sensor2TargetPosition: {x: 0, y: 0, z: 0}
+    sensor2TargetRotation: {x: 0, y: 0, z: 0, w: 0}
   head:
     name: 
     boneId: 7
@@ -4783,6 +4799,857 @@ MonoBehaviour:
       rotationVelocity: {x: 0, y: 0, z: 0, w: 0}
       velocity: {x: 0, y: 0, z: 0}
     headTarget: {fileID: 114165416469678432}
+  face:
+    headTarget: {fileID: 114165416469678432}
+    microphone:
+      enabled: 1
+      target: {fileID: 0}
+      sensorTransform: {fileID: 0}
+      sensor2TargetPosition: {x: 0, y: 0, z: 0}
+      sensor2TargetRotation: {x: 0, y: 0, z: 0, w: 0}
+    leftEye:
+      name: 
+      boneId: 65
+      target:
+        length: 0
+        transform: {fileID: 0}
+        baseRotation: {x: 0, y: 0, z: 0, w: 1}
+        basePosition: {x: 0, y: 0, z: 0}
+        toBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+      bone:
+        transform: {fileID: 0}
+        length: 0
+        jointLimitations: 0
+        maxAngle: 0
+        minAngles: {x: 0, y: 0, z: 0}
+        maxAngles: {x: 0, y: 0, z: 0}
+        baseRotation: {x: 0, y: 0, z: 0, w: 1}
+        basePosition: {x: 0, y: 0, z: 0}
+        toTargetRotation: {x: 0, y: 0, z: 0, w: 0}
+        rotationVelocity: {x: 0, y: 0, z: 0, w: 0}
+        velocity: {x: 0, y: 0, z: 0}
+      headTarget: {fileID: 114165416469678432}
+      upperLid:
+        name: 
+        boneId: 64
+        target:
+          length: 0
+          transform: {fileID: 0}
+          baseRotation: {x: 0, y: 0, z: 0, w: 1}
+          basePosition: {x: 0, y: 0, z: 0}
+          toBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+        bone:
+          transform: {fileID: 0}
+          length: 0
+          jointLimitations: 0
+          maxAngle: 0
+          minAngles: {x: 0, y: 0, z: 0}
+          maxAngles: {x: 0, y: 0, z: 0}
+          baseRotation: {x: 0, y: 0, z: 0, w: 1}
+          basePosition: {x: 0, y: 0, z: 0}
+          toTargetRotation: {x: 0, y: 0, z: 0, w: 0}
+          rotationVelocity: {x: 0, y: 0, z: 0, w: 0}
+          velocity: {x: 0, y: 0, z: 0}
+      lowerLid:
+        name: 
+        boneId: 66
+        target:
+          length: 0
+          transform: {fileID: 0}
+          baseRotation: {x: 0, y: 0, z: 0, w: 1}
+          basePosition: {x: 0, y: 0, z: 0}
+          toBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+        bone:
+          transform: {fileID: 0}
+          length: 0
+          jointLimitations: 0
+          maxAngle: 0
+          minAngles: {x: 0, y: 0, z: 0}
+          maxAngles: {x: 0, y: 0, z: 0}
+          baseRotation: {x: 0, y: 0, z: 0, w: 1}
+          basePosition: {x: 0, y: 0, z: 0}
+          toTargetRotation: {x: 0, y: 0, z: 0, w: 0}
+          rotationVelocity: {x: 0, y: 0, z: 0, w: 0}
+          velocity: {x: 0, y: 0, z: 0}
+      blink: 0
+      closed: 0
+    rightEye:
+      name: 
+      boneId: 68
+      target:
+        length: 0
+        transform: {fileID: 0}
+        baseRotation: {x: 0, y: 0, z: 0, w: 1}
+        basePosition: {x: 0, y: 0, z: 0}
+        toBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+      bone:
+        transform: {fileID: 0}
+        length: 0
+        jointLimitations: 0
+        maxAngle: 0
+        minAngles: {x: 0, y: 0, z: 0}
+        maxAngles: {x: 0, y: 0, z: 0}
+        baseRotation: {x: 0, y: 0, z: 0, w: 1}
+        basePosition: {x: 0, y: 0, z: 0}
+        toTargetRotation: {x: 0, y: 0, z: 0, w: 0}
+        rotationVelocity: {x: 0, y: 0, z: 0, w: 0}
+        velocity: {x: 0, y: 0, z: 0}
+      headTarget: {fileID: 114165416469678432}
+      upperLid:
+        name: 
+        boneId: 67
+        target:
+          length: 0
+          transform: {fileID: 0}
+          baseRotation: {x: 0, y: 0, z: 0, w: 1}
+          basePosition: {x: 0, y: 0, z: 0}
+          toBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+        bone:
+          transform: {fileID: 0}
+          length: 0
+          jointLimitations: 0
+          maxAngle: 0
+          minAngles: {x: 0, y: 0, z: 0}
+          maxAngles: {x: 0, y: 0, z: 0}
+          baseRotation: {x: 0, y: 0, z: 0, w: 1}
+          basePosition: {x: 0, y: 0, z: 0}
+          toTargetRotation: {x: 0, y: 0, z: 0, w: 0}
+          rotationVelocity: {x: 0, y: 0, z: 0, w: 0}
+          velocity: {x: 0, y: 0, z: 0}
+      lowerLid:
+        name: 
+        boneId: 69
+        target:
+          length: 0
+          transform: {fileID: 0}
+          baseRotation: {x: 0, y: 0, z: 0, w: 1}
+          basePosition: {x: 0, y: 0, z: 0}
+          toBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+        bone:
+          transform: {fileID: 0}
+          length: 0
+          jointLimitations: 0
+          maxAngle: 0
+          minAngles: {x: 0, y: 0, z: 0}
+          maxAngles: {x: 0, y: 0, z: 0}
+          baseRotation: {x: 0, y: 0, z: 0, w: 1}
+          basePosition: {x: 0, y: 0, z: 0}
+          toTargetRotation: {x: 0, y: 0, z: 0, w: 0}
+          rotationVelocity: {x: 0, y: 0, z: 0, w: 0}
+          velocity: {x: 0, y: 0, z: 0}
+      blink: 0
+      closed: 0
+    lastBlink: 0
+    leftBrow:
+      outer:
+        name: 
+        boneId: 70
+        target:
+          length: 0
+          transform: {fileID: 0}
+          baseRotation: {x: 0, y: 0, z: 0, w: 1}
+          basePosition: {x: 0, y: 0, z: 0}
+          toBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+        bone:
+          transform: {fileID: 0}
+          length: 0
+          jointLimitations: 0
+          maxAngle: 0
+          minAngles: {x: 0, y: 0, z: 0}
+          maxAngles: {x: 0, y: 0, z: 0}
+          baseRotation: {x: 0, y: 0, z: 0, w: 1}
+          basePosition: {x: 0, y: 0, z: 0}
+          toTargetRotation: {x: 0, y: 0, z: 0, w: 0}
+          rotationVelocity: {x: 0, y: 0, z: 0, w: 0}
+          velocity: {x: 0, y: 0, z: 0}
+        startPosition: {x: 0, y: 0, z: 0}
+      center:
+        name: 
+        boneId: 71
+        target:
+          length: 0
+          transform: {fileID: 0}
+          baseRotation: {x: 0, y: 0, z: 0, w: 1}
+          basePosition: {x: 0, y: 0, z: 0}
+          toBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+        bone:
+          transform: {fileID: 0}
+          length: 0
+          jointLimitations: 0
+          maxAngle: 0
+          minAngles: {x: 0, y: 0, z: 0}
+          maxAngles: {x: 0, y: 0, z: 0}
+          baseRotation: {x: 0, y: 0, z: 0, w: 1}
+          basePosition: {x: 0, y: 0, z: 0}
+          toTargetRotation: {x: 0, y: 0, z: 0, w: 0}
+          rotationVelocity: {x: 0, y: 0, z: 0, w: 0}
+          velocity: {x: 0, y: 0, z: 0}
+        startPosition: {x: 0, y: 0, z: 0}
+      inner:
+        name: 
+        boneId: 72
+        target:
+          length: 0
+          transform: {fileID: 0}
+          baseRotation: {x: 0, y: 0, z: 0, w: 1}
+          basePosition: {x: 0, y: 0, z: 0}
+          toBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+        bone:
+          transform: {fileID: 0}
+          length: 0
+          jointLimitations: 0
+          maxAngle: 0
+          minAngles: {x: 0, y: 0, z: 0}
+          maxAngles: {x: 0, y: 0, z: 0}
+          baseRotation: {x: 0, y: 0, z: 0, w: 1}
+          basePosition: {x: 0, y: 0, z: 0}
+          toTargetRotation: {x: 0, y: 0, z: 0, w: 0}
+          rotationVelocity: {x: 0, y: 0, z: 0, w: 0}
+          velocity: {x: 0, y: 0, z: 0}
+        startPosition: {x: 0, y: 0, z: 0}
+    rightBrow:
+      outer:
+        name: 
+        boneId: 75
+        target:
+          length: 0
+          transform: {fileID: 0}
+          baseRotation: {x: 0, y: 0, z: 0, w: 1}
+          basePosition: {x: 0, y: 0, z: 0}
+          toBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+        bone:
+          transform: {fileID: 0}
+          length: 0
+          jointLimitations: 0
+          maxAngle: 0
+          minAngles: {x: 0, y: 0, z: 0}
+          maxAngles: {x: 0, y: 0, z: 0}
+          baseRotation: {x: 0, y: 0, z: 0, w: 1}
+          basePosition: {x: 0, y: 0, z: 0}
+          toTargetRotation: {x: 0, y: 0, z: 0, w: 0}
+          rotationVelocity: {x: 0, y: 0, z: 0, w: 0}
+          velocity: {x: 0, y: 0, z: 0}
+        startPosition: {x: 0, y: 0, z: 0}
+      center:
+        name: 
+        boneId: 74
+        target:
+          length: 0
+          transform: {fileID: 0}
+          baseRotation: {x: 0, y: 0, z: 0, w: 1}
+          basePosition: {x: 0, y: 0, z: 0}
+          toBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+        bone:
+          transform: {fileID: 0}
+          length: 0
+          jointLimitations: 0
+          maxAngle: 0
+          minAngles: {x: 0, y: 0, z: 0}
+          maxAngles: {x: 0, y: 0, z: 0}
+          baseRotation: {x: 0, y: 0, z: 0, w: 1}
+          basePosition: {x: 0, y: 0, z: 0}
+          toTargetRotation: {x: 0, y: 0, z: 0, w: 0}
+          rotationVelocity: {x: 0, y: 0, z: 0, w: 0}
+          velocity: {x: 0, y: 0, z: 0}
+        startPosition: {x: 0, y: 0, z: 0}
+      inner:
+        name: 
+        boneId: 73
+        target:
+          length: 0
+          transform: {fileID: 0}
+          baseRotation: {x: 0, y: 0, z: 0, w: 1}
+          basePosition: {x: 0, y: 0, z: 0}
+          toBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+        bone:
+          transform: {fileID: 0}
+          length: 0
+          jointLimitations: 0
+          maxAngle: 0
+          minAngles: {x: 0, y: 0, z: 0}
+          maxAngles: {x: 0, y: 0, z: 0}
+          baseRotation: {x: 0, y: 0, z: 0, w: 1}
+          basePosition: {x: 0, y: 0, z: 0}
+          toTargetRotation: {x: 0, y: 0, z: 0, w: 0}
+          rotationVelocity: {x: 0, y: 0, z: 0, w: 0}
+          velocity: {x: 0, y: 0, z: 0}
+        startPosition: {x: 0, y: 0, z: 0}
+    leftEar:
+      name: 
+      boneId: 76
+      target:
+        length: 0
+        transform: {fileID: 0}
+        baseRotation: {x: 0, y: 0, z: 0, w: 1}
+        basePosition: {x: 0, y: 0, z: 0}
+        toBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+      bone:
+        transform: {fileID: 0}
+        length: 0
+        jointLimitations: 0
+        maxAngle: 0
+        minAngles: {x: 0, y: 0, z: 0}
+        maxAngles: {x: 0, y: 0, z: 0}
+        baseRotation: {x: 0, y: 0, z: 0, w: 1}
+        basePosition: {x: 0, y: 0, z: 0}
+        toTargetRotation: {x: 0, y: 0, z: 0, w: 0}
+        rotationVelocity: {x: 0, y: 0, z: 0, w: 0}
+        velocity: {x: 0, y: 0, z: 0}
+      startPosition: {x: 0, y: 0, z: 0}
+    rightEar:
+      name: 
+      boneId: 77
+      target:
+        length: 0
+        transform: {fileID: 0}
+        baseRotation: {x: 0, y: 0, z: 0, w: 1}
+        basePosition: {x: 0, y: 0, z: 0}
+        toBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+      bone:
+        transform: {fileID: 0}
+        length: 0
+        jointLimitations: 0
+        maxAngle: 0
+        minAngles: {x: 0, y: 0, z: 0}
+        maxAngles: {x: 0, y: 0, z: 0}
+        baseRotation: {x: 0, y: 0, z: 0, w: 1}
+        basePosition: {x: 0, y: 0, z: 0}
+        toTargetRotation: {x: 0, y: 0, z: 0, w: 0}
+        rotationVelocity: {x: 0, y: 0, z: 0, w: 0}
+        velocity: {x: 0, y: 0, z: 0}
+      startPosition: {x: 0, y: 0, z: 0}
+    leftCheek:
+      name: 
+      boneId: 78
+      target:
+        length: 0
+        transform: {fileID: 0}
+        baseRotation: {x: 0, y: 0, z: 0, w: 1}
+        basePosition: {x: 0, y: 0, z: 0}
+        toBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+      bone:
+        transform: {fileID: 0}
+        length: 0
+        jointLimitations: 0
+        maxAngle: 0
+        minAngles: {x: 0, y: 0, z: 0}
+        maxAngles: {x: 0, y: 0, z: 0}
+        baseRotation: {x: 0, y: 0, z: 0, w: 1}
+        basePosition: {x: 0, y: 0, z: 0}
+        toTargetRotation: {x: 0, y: 0, z: 0, w: 0}
+        rotationVelocity: {x: 0, y: 0, z: 0, w: 0}
+        velocity: {x: 0, y: 0, z: 0}
+      startPosition: {x: 0, y: 0, z: 0}
+    rightCheek:
+      name: 
+      boneId: 79
+      target:
+        length: 0
+        transform: {fileID: 0}
+        baseRotation: {x: 0, y: 0, z: 0, w: 1}
+        basePosition: {x: 0, y: 0, z: 0}
+        toBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+      bone:
+        transform: {fileID: 0}
+        length: 0
+        jointLimitations: 0
+        maxAngle: 0
+        minAngles: {x: 0, y: 0, z: 0}
+        maxAngles: {x: 0, y: 0, z: 0}
+        baseRotation: {x: 0, y: 0, z: 0, w: 1}
+        basePosition: {x: 0, y: 0, z: 0}
+        toTargetRotation: {x: 0, y: 0, z: 0, w: 0}
+        rotationVelocity: {x: 0, y: 0, z: 0, w: 0}
+        velocity: {x: 0, y: 0, z: 0}
+      startPosition: {x: 0, y: 0, z: 0}
+    nose:
+      top:
+        name: 
+        boneId: 80
+        target:
+          length: 0
+          transform: {fileID: 0}
+          baseRotation: {x: 0, y: 0, z: 0, w: 1}
+          basePosition: {x: 0, y: 0, z: 0}
+          toBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+        bone:
+          transform: {fileID: 0}
+          length: 0
+          jointLimitations: 0
+          maxAngle: 0
+          minAngles: {x: 0, y: 0, z: 0}
+          maxAngles: {x: 0, y: 0, z: 0}
+          baseRotation: {x: 0, y: 0, z: 0, w: 1}
+          basePosition: {x: 0, y: 0, z: 0}
+          toTargetRotation: {x: 0, y: 0, z: 0, w: 0}
+          rotationVelocity: {x: 0, y: 0, z: 0, w: 0}
+          velocity: {x: 0, y: 0, z: 0}
+        startPosition: {x: 0, y: 0, z: 0}
+      tip:
+        name: 
+        boneId: 81
+        target:
+          length: 0
+          transform: {fileID: 0}
+          baseRotation: {x: 0, y: 0, z: 0, w: 1}
+          basePosition: {x: 0, y: 0, z: 0}
+          toBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+        bone:
+          transform: {fileID: 0}
+          length: 0
+          jointLimitations: 0
+          maxAngle: 0
+          minAngles: {x: 0, y: 0, z: 0}
+          maxAngles: {x: 0, y: 0, z: 0}
+          baseRotation: {x: 0, y: 0, z: 0, w: 1}
+          basePosition: {x: 0, y: 0, z: 0}
+          toTargetRotation: {x: 0, y: 0, z: 0, w: 0}
+          rotationVelocity: {x: 0, y: 0, z: 0, w: 0}
+          velocity: {x: 0, y: 0, z: 0}
+        startPosition: {x: 0, y: 0, z: 0}
+      bottomLeft:
+        name: 
+        boneId: 82
+        target:
+          length: 0
+          transform: {fileID: 0}
+          baseRotation: {x: 0, y: 0, z: 0, w: 1}
+          basePosition: {x: 0, y: 0, z: 0}
+          toBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+        bone:
+          transform: {fileID: 0}
+          length: 0
+          jointLimitations: 0
+          maxAngle: 0
+          minAngles: {x: 0, y: 0, z: 0}
+          maxAngles: {x: 0, y: 0, z: 0}
+          baseRotation: {x: 0, y: 0, z: 0, w: 1}
+          basePosition: {x: 0, y: 0, z: 0}
+          toTargetRotation: {x: 0, y: 0, z: 0, w: 0}
+          rotationVelocity: {x: 0, y: 0, z: 0, w: 0}
+          velocity: {x: 0, y: 0, z: 0}
+        startPosition: {x: 0, y: 0, z: 0}
+      bottom:
+        name: 
+        boneId: 83
+        target:
+          length: 0
+          transform: {fileID: 0}
+          baseRotation: {x: 0, y: 0, z: 0, w: 1}
+          basePosition: {x: 0, y: 0, z: 0}
+          toBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+        bone:
+          transform: {fileID: 0}
+          length: 0
+          jointLimitations: 0
+          maxAngle: 0
+          minAngles: {x: 0, y: 0, z: 0}
+          maxAngles: {x: 0, y: 0, z: 0}
+          baseRotation: {x: 0, y: 0, z: 0, w: 1}
+          basePosition: {x: 0, y: 0, z: 0}
+          toTargetRotation: {x: 0, y: 0, z: 0, w: 0}
+          rotationVelocity: {x: 0, y: 0, z: 0, w: 0}
+          velocity: {x: 0, y: 0, z: 0}
+        startPosition: {x: 0, y: 0, z: 0}
+      bottomRight:
+        name: 
+        boneId: 84
+        target:
+          length: 0
+          transform: {fileID: 0}
+          baseRotation: {x: 0, y: 0, z: 0, w: 1}
+          basePosition: {x: 0, y: 0, z: 0}
+          toBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+        bone:
+          transform: {fileID: 0}
+          length: 0
+          jointLimitations: 0
+          maxAngle: 0
+          minAngles: {x: 0, y: 0, z: 0}
+          maxAngles: {x: 0, y: 0, z: 0}
+          baseRotation: {x: 0, y: 0, z: 0, w: 1}
+          basePosition: {x: 0, y: 0, z: 0}
+          toTargetRotation: {x: 0, y: 0, z: 0, w: 0}
+          rotationVelocity: {x: 0, y: 0, z: 0, w: 0}
+          velocity: {x: 0, y: 0, z: 0}
+        startPosition: {x: 0, y: 0, z: 0}
+    mouth:
+      upperLipLeft:
+        name: 
+        boneId: 85
+        target:
+          length: 0
+          transform: {fileID: 0}
+          baseRotation: {x: 0, y: 0, z: 0, w: 1}
+          basePosition: {x: 0, y: 0, z: 0}
+          toBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+        bone:
+          transform: {fileID: 0}
+          length: 0
+          jointLimitations: 0
+          maxAngle: 0
+          minAngles: {x: 0, y: 0, z: 0}
+          maxAngles: {x: 0, y: 0, z: 0}
+          baseRotation: {x: 0, y: 0, z: 0, w: 1}
+          basePosition: {x: 0, y: 0, z: 0}
+          toTargetRotation: {x: 0, y: 0, z: 0, w: 0}
+          rotationVelocity: {x: 0, y: 0, z: 0, w: 0}
+          velocity: {x: 0, y: 0, z: 0}
+        startPosition: {x: 0, y: 0, z: 0}
+      upperLip:
+        name: 
+        boneId: 86
+        target:
+          length: 0
+          transform: {fileID: 0}
+          baseRotation: {x: 0, y: 0, z: 0, w: 1}
+          basePosition: {x: 0, y: 0, z: 0}
+          toBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+        bone:
+          transform: {fileID: 0}
+          length: 0
+          jointLimitations: 0
+          maxAngle: 0
+          minAngles: {x: 0, y: 0, z: 0}
+          maxAngles: {x: 0, y: 0, z: 0}
+          baseRotation: {x: 0, y: 0, z: 0, w: 1}
+          basePosition: {x: 0, y: 0, z: 0}
+          toTargetRotation: {x: 0, y: 0, z: 0, w: 0}
+          rotationVelocity: {x: 0, y: 0, z: 0, w: 0}
+          velocity: {x: 0, y: 0, z: 0}
+        startPosition: {x: 0, y: 0, z: 0}
+      upperLipRight:
+        name: 
+        boneId: 87
+        target:
+          length: 0
+          transform: {fileID: 0}
+          baseRotation: {x: 0, y: 0, z: 0, w: 1}
+          basePosition: {x: 0, y: 0, z: 0}
+          toBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+        bone:
+          transform: {fileID: 0}
+          length: 0
+          jointLimitations: 0
+          maxAngle: 0
+          minAngles: {x: 0, y: 0, z: 0}
+          maxAngles: {x: 0, y: 0, z: 0}
+          baseRotation: {x: 0, y: 0, z: 0, w: 1}
+          basePosition: {x: 0, y: 0, z: 0}
+          toTargetRotation: {x: 0, y: 0, z: 0, w: 0}
+          rotationVelocity: {x: 0, y: 0, z: 0, w: 0}
+          velocity: {x: 0, y: 0, z: 0}
+        startPosition: {x: 0, y: 0, z: 0}
+      lipLeft:
+        name: 
+        boneId: 88
+        target:
+          length: 0
+          transform: {fileID: 0}
+          baseRotation: {x: 0, y: 0, z: 0, w: 1}
+          basePosition: {x: 0, y: 0, z: 0}
+          toBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+        bone:
+          transform: {fileID: 0}
+          length: 0
+          jointLimitations: 0
+          maxAngle: 0
+          minAngles: {x: 0, y: 0, z: 0}
+          maxAngles: {x: 0, y: 0, z: 0}
+          baseRotation: {x: 0, y: 0, z: 0, w: 1}
+          basePosition: {x: 0, y: 0, z: 0}
+          toTargetRotation: {x: 0, y: 0, z: 0, w: 0}
+          rotationVelocity: {x: 0, y: 0, z: 0, w: 0}
+          velocity: {x: 0, y: 0, z: 0}
+        startPosition: {x: 0, y: 0, z: 0}
+      lipRight:
+        name: 
+        boneId: 89
+        target:
+          length: 0
+          transform: {fileID: 0}
+          baseRotation: {x: 0, y: 0, z: 0, w: 1}
+          basePosition: {x: 0, y: 0, z: 0}
+          toBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+        bone:
+          transform: {fileID: 0}
+          length: 0
+          jointLimitations: 0
+          maxAngle: 0
+          minAngles: {x: 0, y: 0, z: 0}
+          maxAngles: {x: 0, y: 0, z: 0}
+          baseRotation: {x: 0, y: 0, z: 0, w: 1}
+          basePosition: {x: 0, y: 0, z: 0}
+          toTargetRotation: {x: 0, y: 0, z: 0, w: 0}
+          rotationVelocity: {x: 0, y: 0, z: 0, w: 0}
+          velocity: {x: 0, y: 0, z: 0}
+        startPosition: {x: 0, y: 0, z: 0}
+      lowerLipLeft:
+        name: 
+        boneId: 90
+        target:
+          length: 0
+          transform: {fileID: 0}
+          baseRotation: {x: 0, y: 0, z: 0, w: 1}
+          basePosition: {x: 0, y: 0, z: 0}
+          toBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+        bone:
+          transform: {fileID: 0}
+          length: 0
+          jointLimitations: 0
+          maxAngle: 0
+          minAngles: {x: 0, y: 0, z: 0}
+          maxAngles: {x: 0, y: 0, z: 0}
+          baseRotation: {x: 0, y: 0, z: 0, w: 1}
+          basePosition: {x: 0, y: 0, z: 0}
+          toTargetRotation: {x: 0, y: 0, z: 0, w: 0}
+          rotationVelocity: {x: 0, y: 0, z: 0, w: 0}
+          velocity: {x: 0, y: 0, z: 0}
+        startPosition: {x: 0, y: 0, z: 0}
+      lowerLip:
+        name: 
+        boneId: 91
+        target:
+          length: 0
+          transform: {fileID: 0}
+          baseRotation: {x: 0, y: 0, z: 0, w: 1}
+          basePosition: {x: 0, y: 0, z: 0}
+          toBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+        bone:
+          transform: {fileID: 0}
+          length: 0
+          jointLimitations: 0
+          maxAngle: 0
+          minAngles: {x: 0, y: 0, z: 0}
+          maxAngles: {x: 0, y: 0, z: 0}
+          baseRotation: {x: 0, y: 0, z: 0, w: 1}
+          basePosition: {x: 0, y: 0, z: 0}
+          toTargetRotation: {x: 0, y: 0, z: 0, w: 0}
+          rotationVelocity: {x: 0, y: 0, z: 0, w: 0}
+          velocity: {x: 0, y: 0, z: 0}
+        startPosition: {x: 0, y: 0, z: 0}
+      lowerLipRight:
+        name: 
+        boneId: 92
+        target:
+          length: 0
+          transform: {fileID: 0}
+          baseRotation: {x: 0, y: 0, z: 0, w: 1}
+          basePosition: {x: 0, y: 0, z: 0}
+          toBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+        bone:
+          transform: {fileID: 0}
+          length: 0
+          jointLimitations: 0
+          maxAngle: 0
+          minAngles: {x: 0, y: 0, z: 0}
+          maxAngles: {x: 0, y: 0, z: 0}
+          baseRotation: {x: 0, y: 0, z: 0, w: 1}
+          basePosition: {x: 0, y: 0, z: 0}
+          toTargetRotation: {x: 0, y: 0, z: 0, w: 0}
+          rotationVelocity: {x: 0, y: 0, z: 0, w: 0}
+          velocity: {x: 0, y: 0, z: 0}
+        startPosition: {x: 0, y: 0, z: 0}
+      bones:
+      - name: 
+        boneId: 85
+        target:
+          length: 0
+          transform: {fileID: 0}
+          baseRotation: {x: 0, y: 0, z: 0, w: 1}
+          basePosition: {x: 0, y: 0, z: 0}
+          toBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+        bone:
+          transform: {fileID: 0}
+          length: 0
+          jointLimitations: 0
+          maxAngle: 0
+          minAngles: {x: 0, y: 0, z: 0}
+          maxAngles: {x: 0, y: 0, z: 0}
+          baseRotation: {x: 0, y: 0, z: 0, w: 1}
+          basePosition: {x: 0, y: 0, z: 0}
+          toTargetRotation: {x: 0, y: 0, z: 0, w: 0}
+          rotationVelocity: {x: 0, y: 0, z: 0, w: 0}
+          velocity: {x: 0, y: 0, z: 0}
+        startPosition: {x: 0, y: 0, z: 0}
+      - name: 
+        boneId: 86
+        target:
+          length: 0
+          transform: {fileID: 0}
+          baseRotation: {x: 0, y: 0, z: 0, w: 1}
+          basePosition: {x: 0, y: 0, z: 0}
+          toBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+        bone:
+          transform: {fileID: 0}
+          length: 0
+          jointLimitations: 0
+          maxAngle: 0
+          minAngles: {x: 0, y: 0, z: 0}
+          maxAngles: {x: 0, y: 0, z: 0}
+          baseRotation: {x: 0, y: 0, z: 0, w: 1}
+          basePosition: {x: 0, y: 0, z: 0}
+          toTargetRotation: {x: 0, y: 0, z: 0, w: 0}
+          rotationVelocity: {x: 0, y: 0, z: 0, w: 0}
+          velocity: {x: 0, y: 0, z: 0}
+        startPosition: {x: 0, y: 0, z: 0}
+      - name: 
+        boneId: 87
+        target:
+          length: 0
+          transform: {fileID: 0}
+          baseRotation: {x: 0, y: 0, z: 0, w: 1}
+          basePosition: {x: 0, y: 0, z: 0}
+          toBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+        bone:
+          transform: {fileID: 0}
+          length: 0
+          jointLimitations: 0
+          maxAngle: 0
+          minAngles: {x: 0, y: 0, z: 0}
+          maxAngles: {x: 0, y: 0, z: 0}
+          baseRotation: {x: 0, y: 0, z: 0, w: 1}
+          basePosition: {x: 0, y: 0, z: 0}
+          toTargetRotation: {x: 0, y: 0, z: 0, w: 0}
+          rotationVelocity: {x: 0, y: 0, z: 0, w: 0}
+          velocity: {x: 0, y: 0, z: 0}
+        startPosition: {x: 0, y: 0, z: 0}
+      - name: 
+        boneId: 88
+        target:
+          length: 0
+          transform: {fileID: 0}
+          baseRotation: {x: 0, y: 0, z: 0, w: 1}
+          basePosition: {x: 0, y: 0, z: 0}
+          toBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+        bone:
+          transform: {fileID: 0}
+          length: 0
+          jointLimitations: 0
+          maxAngle: 0
+          minAngles: {x: 0, y: 0, z: 0}
+          maxAngles: {x: 0, y: 0, z: 0}
+          baseRotation: {x: 0, y: 0, z: 0, w: 1}
+          basePosition: {x: 0, y: 0, z: 0}
+          toTargetRotation: {x: 0, y: 0, z: 0, w: 0}
+          rotationVelocity: {x: 0, y: 0, z: 0, w: 0}
+          velocity: {x: 0, y: 0, z: 0}
+        startPosition: {x: 0, y: 0, z: 0}
+      - name: 
+        boneId: 89
+        target:
+          length: 0
+          transform: {fileID: 0}
+          baseRotation: {x: 0, y: 0, z: 0, w: 1}
+          basePosition: {x: 0, y: 0, z: 0}
+          toBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+        bone:
+          transform: {fileID: 0}
+          length: 0
+          jointLimitations: 0
+          maxAngle: 0
+          minAngles: {x: 0, y: 0, z: 0}
+          maxAngles: {x: 0, y: 0, z: 0}
+          baseRotation: {x: 0, y: 0, z: 0, w: 1}
+          basePosition: {x: 0, y: 0, z: 0}
+          toTargetRotation: {x: 0, y: 0, z: 0, w: 0}
+          rotationVelocity: {x: 0, y: 0, z: 0, w: 0}
+          velocity: {x: 0, y: 0, z: 0}
+        startPosition: {x: 0, y: 0, z: 0}
+      - name: 
+        boneId: 90
+        target:
+          length: 0
+          transform: {fileID: 0}
+          baseRotation: {x: 0, y: 0, z: 0, w: 1}
+          basePosition: {x: 0, y: 0, z: 0}
+          toBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+        bone:
+          transform: {fileID: 0}
+          length: 0
+          jointLimitations: 0
+          maxAngle: 0
+          minAngles: {x: 0, y: 0, z: 0}
+          maxAngles: {x: 0, y: 0, z: 0}
+          baseRotation: {x: 0, y: 0, z: 0, w: 1}
+          basePosition: {x: 0, y: 0, z: 0}
+          toTargetRotation: {x: 0, y: 0, z: 0, w: 0}
+          rotationVelocity: {x: 0, y: 0, z: 0, w: 0}
+          velocity: {x: 0, y: 0, z: 0}
+        startPosition: {x: 0, y: 0, z: 0}
+      - name: 
+        boneId: 91
+        target:
+          length: 0
+          transform: {fileID: 0}
+          baseRotation: {x: 0, y: 0, z: 0, w: 1}
+          basePosition: {x: 0, y: 0, z: 0}
+          toBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+        bone:
+          transform: {fileID: 0}
+          length: 0
+          jointLimitations: 0
+          maxAngle: 0
+          minAngles: {x: 0, y: 0, z: 0}
+          maxAngles: {x: 0, y: 0, z: 0}
+          baseRotation: {x: 0, y: 0, z: 0, w: 1}
+          basePosition: {x: 0, y: 0, z: 0}
+          toTargetRotation: {x: 0, y: 0, z: 0, w: 0}
+          rotationVelocity: {x: 0, y: 0, z: 0, w: 0}
+          velocity: {x: 0, y: 0, z: 0}
+        startPosition: {x: 0, y: 0, z: 0}
+      - name: 
+        boneId: 92
+        target:
+          length: 0
+          transform: {fileID: 0}
+          baseRotation: {x: 0, y: 0, z: 0, w: 1}
+          basePosition: {x: 0, y: 0, z: 0}
+          toBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+        bone:
+          transform: {fileID: 0}
+          length: 0
+          jointLimitations: 0
+          maxAngle: 0
+          minAngles: {x: 0, y: 0, z: 0}
+          maxAngles: {x: 0, y: 0, z: 0}
+          baseRotation: {x: 0, y: 0, z: 0, w: 1}
+          basePosition: {x: 0, y: 0, z: 0}
+          toTargetRotation: {x: 0, y: 0, z: 0, w: 0}
+          rotationVelocity: {x: 0, y: 0, z: 0, w: 0}
+          velocity: {x: 0, y: 0, z: 0}
+        startPosition: {x: 0, y: 0, z: 0}
+    gazeDirection: {x: 0, y: 0, z: 1}
+    localGazeDirection: {x: 0, y: 0, z: 1}
+    focusPoint: {x: 0, y: 0, z: 0}
+    focusObject: {fileID: 0}
+    jaw:
+      name: 
+      boneId: 93
+      target:
+        length: 0
+        transform: {fileID: 0}
+        baseRotation: {x: 0, y: 0, z: 0, w: 1}
+        basePosition: {x: 0, y: 0, z: 0}
+        toBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+      bone:
+        transform: {fileID: 0}
+        length: 0
+        jointLimitations: 0
+        maxAngle: 0
+        minAngles: {x: 0, y: 0, z: 0}
+        maxAngles: {x: 0, y: 0, z: 0}
+        baseRotation: {x: 0, y: 0, z: 0, w: 1}
+        basePosition: {x: 0, y: 0, z: 0}
+        toTargetRotation: {x: 0, y: 0, z: 0, w: 0}
+        rotationVelocity: {x: 0, y: 0, z: 0, w: 0}
+        velocity: {x: 0, y: 0, z: 0}
+    pose: 0
+    poseMixer:
+      mixedPoses: []
+      currentPoseIx: 0
+      detectedPose: {fileID: 0}
+    directFaceMovements: 1
   smileValue: 0
   puckerValue: 0
   frownValue: 0
@@ -4862,7 +5729,6 @@ MeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -5251,7 +6117,6 @@ MeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -5429,7 +6294,6 @@ SkinnedMeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -5657,7 +6521,6 @@ MeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -6567,7 +7430,6 @@ MeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -6737,7 +7599,6 @@ MeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -7549,7 +8410,6 @@ MeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -8372,6 +9232,12 @@ MonoBehaviour:
     sensor2TargetPosition: {x: 0, y: 0, z: 0}
     sensor2TargetRotation: {x: 0, y: 0, z: 0, w: 0}
     armSwing: 0
+  oculus:
+    enabled: 1
+    target: {fileID: 114928447782628432}
+    sensorTransform: {fileID: 0}
+    sensor2TargetPosition: {x: 0.1, y: 0.05, z: -0.04}
+    sensor2TargetRotation: {x: -0.49999994, y: 0.5, z: 0.5, w: 0.49999994}
   stretchlessTarget: {fileID: 0}
   shoulder:
     name: 
@@ -9156,7 +10022,6 @@ MeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -9234,7 +10099,6 @@ MeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -9373,7 +10237,6 @@ MeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -9481,7 +10344,6 @@ MeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -10047,7 +10909,6 @@ SkinnedMeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -10214,7 +11075,6 @@ MeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -10437,7 +11297,6 @@ SkinnedMeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -10587,6 +11446,14 @@ MonoBehaviour:
   rotationConfidence: 0
   positionConfidence: 0
   autoUpdate: 1
+  isLeft: 0
+  joystick: {x: 0, y: 0, z: 0}
+  indexTrigger: 0
+  handTrigger: 0
+  buttonAX: 0
+  buttonBY: 0
+  thumbrest: 0
+  positionalTracking: 1
 --- !u!1 &1817751863883156
 GameObject:
   m_ObjectHideFlags: 0
@@ -10743,6 +11610,19 @@ MonoBehaviour:
     sensor2TargetRotation: {x: 0, y: 0, z: 0, w: 0}
     headAnimation: 1
     faceAnimation: 1
+  oculus:
+    enabled: 1
+    target: {fileID: 114221893404914274}
+    sensorTransform: {fileID: 0}
+    sensor2TargetPosition: {x: 0.00029402185, y: -0.03600979, z: -0.105798304}
+    sensor2TargetRotation: {x: -0, y: -0, z: -0, w: 1}
+    overrideOptitrackPosition: 1
+  microphone:
+    enabled: 1
+    target: {fileID: 0}
+    sensorTransform: {fileID: 0}
+    sensor2TargetPosition: {x: 0, y: 0, z: 0}
+    sensor2TargetRotation: {x: 0, y: 0, z: 0, w: 0}
   head:
     name: 
     boneId: 7
@@ -10788,6 +11668,857 @@ MonoBehaviour:
       rotationVelocity: {x: 0, y: 0, z: 0, w: 0}
       velocity: {x: 0, y: 0, z: 0}
     headTarget: {fileID: 114221893404914274}
+  face:
+    headTarget: {fileID: 114221893404914274}
+    microphone:
+      enabled: 1
+      target: {fileID: 0}
+      sensorTransform: {fileID: 0}
+      sensor2TargetPosition: {x: 0, y: 0, z: 0}
+      sensor2TargetRotation: {x: 0, y: 0, z: 0, w: 0}
+    leftEye:
+      name: 
+      boneId: 65
+      target:
+        length: 0
+        transform: {fileID: 0}
+        baseRotation: {x: 0, y: 0, z: 0, w: 1}
+        basePosition: {x: 0, y: 0, z: 0}
+        toBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+      bone:
+        transform: {fileID: 0}
+        length: 0
+        jointLimitations: 0
+        maxAngle: 0
+        minAngles: {x: 0, y: 0, z: 0}
+        maxAngles: {x: 0, y: 0, z: 0}
+        baseRotation: {x: 0, y: 0, z: 0, w: 1}
+        basePosition: {x: 0, y: 0, z: 0}
+        toTargetRotation: {x: 0, y: 0, z: 0, w: 0}
+        rotationVelocity: {x: 0, y: 0, z: 0, w: 0}
+        velocity: {x: 0, y: 0, z: 0}
+      headTarget: {fileID: 114221893404914274}
+      upperLid:
+        name: 
+        boneId: 64
+        target:
+          length: 0
+          transform: {fileID: 0}
+          baseRotation: {x: 0, y: 0, z: 0, w: 1}
+          basePosition: {x: 0, y: 0, z: 0}
+          toBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+        bone:
+          transform: {fileID: 0}
+          length: 0
+          jointLimitations: 0
+          maxAngle: 0
+          minAngles: {x: 0, y: 0, z: 0}
+          maxAngles: {x: 0, y: 0, z: 0}
+          baseRotation: {x: 0, y: 0, z: 0, w: 1}
+          basePosition: {x: 0, y: 0, z: 0}
+          toTargetRotation: {x: 0, y: 0, z: 0, w: 0}
+          rotationVelocity: {x: 0, y: 0, z: 0, w: 0}
+          velocity: {x: 0, y: 0, z: 0}
+      lowerLid:
+        name: 
+        boneId: 66
+        target:
+          length: 0
+          transform: {fileID: 0}
+          baseRotation: {x: 0, y: 0, z: 0, w: 1}
+          basePosition: {x: 0, y: 0, z: 0}
+          toBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+        bone:
+          transform: {fileID: 0}
+          length: 0
+          jointLimitations: 0
+          maxAngle: 0
+          minAngles: {x: 0, y: 0, z: 0}
+          maxAngles: {x: 0, y: 0, z: 0}
+          baseRotation: {x: 0, y: 0, z: 0, w: 1}
+          basePosition: {x: 0, y: 0, z: 0}
+          toTargetRotation: {x: 0, y: 0, z: 0, w: 0}
+          rotationVelocity: {x: 0, y: 0, z: 0, w: 0}
+          velocity: {x: 0, y: 0, z: 0}
+      blink: 0
+      closed: 0
+    rightEye:
+      name: 
+      boneId: 68
+      target:
+        length: 0
+        transform: {fileID: 0}
+        baseRotation: {x: 0, y: 0, z: 0, w: 1}
+        basePosition: {x: 0, y: 0, z: 0}
+        toBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+      bone:
+        transform: {fileID: 0}
+        length: 0
+        jointLimitations: 0
+        maxAngle: 0
+        minAngles: {x: 0, y: 0, z: 0}
+        maxAngles: {x: 0, y: 0, z: 0}
+        baseRotation: {x: 0, y: 0, z: 0, w: 1}
+        basePosition: {x: 0, y: 0, z: 0}
+        toTargetRotation: {x: 0, y: 0, z: 0, w: 0}
+        rotationVelocity: {x: 0, y: 0, z: 0, w: 0}
+        velocity: {x: 0, y: 0, z: 0}
+      headTarget: {fileID: 114221893404914274}
+      upperLid:
+        name: 
+        boneId: 67
+        target:
+          length: 0
+          transform: {fileID: 0}
+          baseRotation: {x: 0, y: 0, z: 0, w: 1}
+          basePosition: {x: 0, y: 0, z: 0}
+          toBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+        bone:
+          transform: {fileID: 0}
+          length: 0
+          jointLimitations: 0
+          maxAngle: 0
+          minAngles: {x: 0, y: 0, z: 0}
+          maxAngles: {x: 0, y: 0, z: 0}
+          baseRotation: {x: 0, y: 0, z: 0, w: 1}
+          basePosition: {x: 0, y: 0, z: 0}
+          toTargetRotation: {x: 0, y: 0, z: 0, w: 0}
+          rotationVelocity: {x: 0, y: 0, z: 0, w: 0}
+          velocity: {x: 0, y: 0, z: 0}
+      lowerLid:
+        name: 
+        boneId: 69
+        target:
+          length: 0
+          transform: {fileID: 0}
+          baseRotation: {x: 0, y: 0, z: 0, w: 1}
+          basePosition: {x: 0, y: 0, z: 0}
+          toBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+        bone:
+          transform: {fileID: 0}
+          length: 0
+          jointLimitations: 0
+          maxAngle: 0
+          minAngles: {x: 0, y: 0, z: 0}
+          maxAngles: {x: 0, y: 0, z: 0}
+          baseRotation: {x: 0, y: 0, z: 0, w: 1}
+          basePosition: {x: 0, y: 0, z: 0}
+          toTargetRotation: {x: 0, y: 0, z: 0, w: 0}
+          rotationVelocity: {x: 0, y: 0, z: 0, w: 0}
+          velocity: {x: 0, y: 0, z: 0}
+      blink: 0
+      closed: 0
+    lastBlink: 0
+    leftBrow:
+      outer:
+        name: 
+        boneId: 70
+        target:
+          length: 0
+          transform: {fileID: 0}
+          baseRotation: {x: 0, y: 0, z: 0, w: 1}
+          basePosition: {x: 0, y: 0, z: 0}
+          toBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+        bone:
+          transform: {fileID: 0}
+          length: 0
+          jointLimitations: 0
+          maxAngle: 0
+          minAngles: {x: 0, y: 0, z: 0}
+          maxAngles: {x: 0, y: 0, z: 0}
+          baseRotation: {x: 0, y: 0, z: 0, w: 1}
+          basePosition: {x: 0, y: 0, z: 0}
+          toTargetRotation: {x: 0, y: 0, z: 0, w: 0}
+          rotationVelocity: {x: 0, y: 0, z: 0, w: 0}
+          velocity: {x: 0, y: 0, z: 0}
+        startPosition: {x: 0, y: 0, z: 0}
+      center:
+        name: 
+        boneId: 71
+        target:
+          length: 0
+          transform: {fileID: 0}
+          baseRotation: {x: 0, y: 0, z: 0, w: 1}
+          basePosition: {x: 0, y: 0, z: 0}
+          toBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+        bone:
+          transform: {fileID: 0}
+          length: 0
+          jointLimitations: 0
+          maxAngle: 0
+          minAngles: {x: 0, y: 0, z: 0}
+          maxAngles: {x: 0, y: 0, z: 0}
+          baseRotation: {x: 0, y: 0, z: 0, w: 1}
+          basePosition: {x: 0, y: 0, z: 0}
+          toTargetRotation: {x: 0, y: 0, z: 0, w: 0}
+          rotationVelocity: {x: 0, y: 0, z: 0, w: 0}
+          velocity: {x: 0, y: 0, z: 0}
+        startPosition: {x: 0, y: 0, z: 0}
+      inner:
+        name: 
+        boneId: 72
+        target:
+          length: 0
+          transform: {fileID: 0}
+          baseRotation: {x: 0, y: 0, z: 0, w: 1}
+          basePosition: {x: 0, y: 0, z: 0}
+          toBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+        bone:
+          transform: {fileID: 0}
+          length: 0
+          jointLimitations: 0
+          maxAngle: 0
+          minAngles: {x: 0, y: 0, z: 0}
+          maxAngles: {x: 0, y: 0, z: 0}
+          baseRotation: {x: 0, y: 0, z: 0, w: 1}
+          basePosition: {x: 0, y: 0, z: 0}
+          toTargetRotation: {x: 0, y: 0, z: 0, w: 0}
+          rotationVelocity: {x: 0, y: 0, z: 0, w: 0}
+          velocity: {x: 0, y: 0, z: 0}
+        startPosition: {x: 0, y: 0, z: 0}
+    rightBrow:
+      outer:
+        name: 
+        boneId: 75
+        target:
+          length: 0
+          transform: {fileID: 0}
+          baseRotation: {x: 0, y: 0, z: 0, w: 1}
+          basePosition: {x: 0, y: 0, z: 0}
+          toBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+        bone:
+          transform: {fileID: 0}
+          length: 0
+          jointLimitations: 0
+          maxAngle: 0
+          minAngles: {x: 0, y: 0, z: 0}
+          maxAngles: {x: 0, y: 0, z: 0}
+          baseRotation: {x: 0, y: 0, z: 0, w: 1}
+          basePosition: {x: 0, y: 0, z: 0}
+          toTargetRotation: {x: 0, y: 0, z: 0, w: 0}
+          rotationVelocity: {x: 0, y: 0, z: 0, w: 0}
+          velocity: {x: 0, y: 0, z: 0}
+        startPosition: {x: 0, y: 0, z: 0}
+      center:
+        name: 
+        boneId: 74
+        target:
+          length: 0
+          transform: {fileID: 0}
+          baseRotation: {x: 0, y: 0, z: 0, w: 1}
+          basePosition: {x: 0, y: 0, z: 0}
+          toBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+        bone:
+          transform: {fileID: 0}
+          length: 0
+          jointLimitations: 0
+          maxAngle: 0
+          minAngles: {x: 0, y: 0, z: 0}
+          maxAngles: {x: 0, y: 0, z: 0}
+          baseRotation: {x: 0, y: 0, z: 0, w: 1}
+          basePosition: {x: 0, y: 0, z: 0}
+          toTargetRotation: {x: 0, y: 0, z: 0, w: 0}
+          rotationVelocity: {x: 0, y: 0, z: 0, w: 0}
+          velocity: {x: 0, y: 0, z: 0}
+        startPosition: {x: 0, y: 0, z: 0}
+      inner:
+        name: 
+        boneId: 73
+        target:
+          length: 0
+          transform: {fileID: 0}
+          baseRotation: {x: 0, y: 0, z: 0, w: 1}
+          basePosition: {x: 0, y: 0, z: 0}
+          toBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+        bone:
+          transform: {fileID: 0}
+          length: 0
+          jointLimitations: 0
+          maxAngle: 0
+          minAngles: {x: 0, y: 0, z: 0}
+          maxAngles: {x: 0, y: 0, z: 0}
+          baseRotation: {x: 0, y: 0, z: 0, w: 1}
+          basePosition: {x: 0, y: 0, z: 0}
+          toTargetRotation: {x: 0, y: 0, z: 0, w: 0}
+          rotationVelocity: {x: 0, y: 0, z: 0, w: 0}
+          velocity: {x: 0, y: 0, z: 0}
+        startPosition: {x: 0, y: 0, z: 0}
+    leftEar:
+      name: 
+      boneId: 76
+      target:
+        length: 0
+        transform: {fileID: 0}
+        baseRotation: {x: 0, y: 0, z: 0, w: 1}
+        basePosition: {x: 0, y: 0, z: 0}
+        toBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+      bone:
+        transform: {fileID: 0}
+        length: 0
+        jointLimitations: 0
+        maxAngle: 0
+        minAngles: {x: 0, y: 0, z: 0}
+        maxAngles: {x: 0, y: 0, z: 0}
+        baseRotation: {x: 0, y: 0, z: 0, w: 1}
+        basePosition: {x: 0, y: 0, z: 0}
+        toTargetRotation: {x: 0, y: 0, z: 0, w: 0}
+        rotationVelocity: {x: 0, y: 0, z: 0, w: 0}
+        velocity: {x: 0, y: 0, z: 0}
+      startPosition: {x: 0, y: 0, z: 0}
+    rightEar:
+      name: 
+      boneId: 77
+      target:
+        length: 0
+        transform: {fileID: 0}
+        baseRotation: {x: 0, y: 0, z: 0, w: 1}
+        basePosition: {x: 0, y: 0, z: 0}
+        toBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+      bone:
+        transform: {fileID: 0}
+        length: 0
+        jointLimitations: 0
+        maxAngle: 0
+        minAngles: {x: 0, y: 0, z: 0}
+        maxAngles: {x: 0, y: 0, z: 0}
+        baseRotation: {x: 0, y: 0, z: 0, w: 1}
+        basePosition: {x: 0, y: 0, z: 0}
+        toTargetRotation: {x: 0, y: 0, z: 0, w: 0}
+        rotationVelocity: {x: 0, y: 0, z: 0, w: 0}
+        velocity: {x: 0, y: 0, z: 0}
+      startPosition: {x: 0, y: 0, z: 0}
+    leftCheek:
+      name: 
+      boneId: 78
+      target:
+        length: 0
+        transform: {fileID: 0}
+        baseRotation: {x: 0, y: 0, z: 0, w: 1}
+        basePosition: {x: 0, y: 0, z: 0}
+        toBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+      bone:
+        transform: {fileID: 0}
+        length: 0
+        jointLimitations: 0
+        maxAngle: 0
+        minAngles: {x: 0, y: 0, z: 0}
+        maxAngles: {x: 0, y: 0, z: 0}
+        baseRotation: {x: 0, y: 0, z: 0, w: 1}
+        basePosition: {x: 0, y: 0, z: 0}
+        toTargetRotation: {x: 0, y: 0, z: 0, w: 0}
+        rotationVelocity: {x: 0, y: 0, z: 0, w: 0}
+        velocity: {x: 0, y: 0, z: 0}
+      startPosition: {x: 0, y: 0, z: 0}
+    rightCheek:
+      name: 
+      boneId: 79
+      target:
+        length: 0
+        transform: {fileID: 0}
+        baseRotation: {x: 0, y: 0, z: 0, w: 1}
+        basePosition: {x: 0, y: 0, z: 0}
+        toBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+      bone:
+        transform: {fileID: 0}
+        length: 0
+        jointLimitations: 0
+        maxAngle: 0
+        minAngles: {x: 0, y: 0, z: 0}
+        maxAngles: {x: 0, y: 0, z: 0}
+        baseRotation: {x: 0, y: 0, z: 0, w: 1}
+        basePosition: {x: 0, y: 0, z: 0}
+        toTargetRotation: {x: 0, y: 0, z: 0, w: 0}
+        rotationVelocity: {x: 0, y: 0, z: 0, w: 0}
+        velocity: {x: 0, y: 0, z: 0}
+      startPosition: {x: 0, y: 0, z: 0}
+    nose:
+      top:
+        name: 
+        boneId: 80
+        target:
+          length: 0
+          transform: {fileID: 0}
+          baseRotation: {x: 0, y: 0, z: 0, w: 1}
+          basePosition: {x: 0, y: 0, z: 0}
+          toBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+        bone:
+          transform: {fileID: 0}
+          length: 0
+          jointLimitations: 0
+          maxAngle: 0
+          minAngles: {x: 0, y: 0, z: 0}
+          maxAngles: {x: 0, y: 0, z: 0}
+          baseRotation: {x: 0, y: 0, z: 0, w: 1}
+          basePosition: {x: 0, y: 0, z: 0}
+          toTargetRotation: {x: 0, y: 0, z: 0, w: 0}
+          rotationVelocity: {x: 0, y: 0, z: 0, w: 0}
+          velocity: {x: 0, y: 0, z: 0}
+        startPosition: {x: 0, y: 0, z: 0}
+      tip:
+        name: 
+        boneId: 81
+        target:
+          length: 0
+          transform: {fileID: 0}
+          baseRotation: {x: 0, y: 0, z: 0, w: 1}
+          basePosition: {x: 0, y: 0, z: 0}
+          toBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+        bone:
+          transform: {fileID: 0}
+          length: 0
+          jointLimitations: 0
+          maxAngle: 0
+          minAngles: {x: 0, y: 0, z: 0}
+          maxAngles: {x: 0, y: 0, z: 0}
+          baseRotation: {x: 0, y: 0, z: 0, w: 1}
+          basePosition: {x: 0, y: 0, z: 0}
+          toTargetRotation: {x: 0, y: 0, z: 0, w: 0}
+          rotationVelocity: {x: 0, y: 0, z: 0, w: 0}
+          velocity: {x: 0, y: 0, z: 0}
+        startPosition: {x: 0, y: 0, z: 0}
+      bottomLeft:
+        name: 
+        boneId: 82
+        target:
+          length: 0
+          transform: {fileID: 0}
+          baseRotation: {x: 0, y: 0, z: 0, w: 1}
+          basePosition: {x: 0, y: 0, z: 0}
+          toBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+        bone:
+          transform: {fileID: 0}
+          length: 0
+          jointLimitations: 0
+          maxAngle: 0
+          minAngles: {x: 0, y: 0, z: 0}
+          maxAngles: {x: 0, y: 0, z: 0}
+          baseRotation: {x: 0, y: 0, z: 0, w: 1}
+          basePosition: {x: 0, y: 0, z: 0}
+          toTargetRotation: {x: 0, y: 0, z: 0, w: 0}
+          rotationVelocity: {x: 0, y: 0, z: 0, w: 0}
+          velocity: {x: 0, y: 0, z: 0}
+        startPosition: {x: 0, y: 0, z: 0}
+      bottom:
+        name: 
+        boneId: 83
+        target:
+          length: 0
+          transform: {fileID: 0}
+          baseRotation: {x: 0, y: 0, z: 0, w: 1}
+          basePosition: {x: 0, y: 0, z: 0}
+          toBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+        bone:
+          transform: {fileID: 0}
+          length: 0
+          jointLimitations: 0
+          maxAngle: 0
+          minAngles: {x: 0, y: 0, z: 0}
+          maxAngles: {x: 0, y: 0, z: 0}
+          baseRotation: {x: 0, y: 0, z: 0, w: 1}
+          basePosition: {x: 0, y: 0, z: 0}
+          toTargetRotation: {x: 0, y: 0, z: 0, w: 0}
+          rotationVelocity: {x: 0, y: 0, z: 0, w: 0}
+          velocity: {x: 0, y: 0, z: 0}
+        startPosition: {x: 0, y: 0, z: 0}
+      bottomRight:
+        name: 
+        boneId: 84
+        target:
+          length: 0
+          transform: {fileID: 0}
+          baseRotation: {x: 0, y: 0, z: 0, w: 1}
+          basePosition: {x: 0, y: 0, z: 0}
+          toBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+        bone:
+          transform: {fileID: 0}
+          length: 0
+          jointLimitations: 0
+          maxAngle: 0
+          minAngles: {x: 0, y: 0, z: 0}
+          maxAngles: {x: 0, y: 0, z: 0}
+          baseRotation: {x: 0, y: 0, z: 0, w: 1}
+          basePosition: {x: 0, y: 0, z: 0}
+          toTargetRotation: {x: 0, y: 0, z: 0, w: 0}
+          rotationVelocity: {x: 0, y: 0, z: 0, w: 0}
+          velocity: {x: 0, y: 0, z: 0}
+        startPosition: {x: 0, y: 0, z: 0}
+    mouth:
+      upperLipLeft:
+        name: 
+        boneId: 85
+        target:
+          length: 0
+          transform: {fileID: 0}
+          baseRotation: {x: 0, y: 0, z: 0, w: 1}
+          basePosition: {x: 0, y: 0, z: 0}
+          toBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+        bone:
+          transform: {fileID: 0}
+          length: 0
+          jointLimitations: 0
+          maxAngle: 0
+          minAngles: {x: 0, y: 0, z: 0}
+          maxAngles: {x: 0, y: 0, z: 0}
+          baseRotation: {x: 0, y: 0, z: 0, w: 1}
+          basePosition: {x: 0, y: 0, z: 0}
+          toTargetRotation: {x: 0, y: 0, z: 0, w: 0}
+          rotationVelocity: {x: 0, y: 0, z: 0, w: 0}
+          velocity: {x: 0, y: 0, z: 0}
+        startPosition: {x: 0, y: 0, z: 0}
+      upperLip:
+        name: 
+        boneId: 86
+        target:
+          length: 0
+          transform: {fileID: 0}
+          baseRotation: {x: 0, y: 0, z: 0, w: 1}
+          basePosition: {x: 0, y: 0, z: 0}
+          toBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+        bone:
+          transform: {fileID: 0}
+          length: 0
+          jointLimitations: 0
+          maxAngle: 0
+          minAngles: {x: 0, y: 0, z: 0}
+          maxAngles: {x: 0, y: 0, z: 0}
+          baseRotation: {x: 0, y: 0, z: 0, w: 1}
+          basePosition: {x: 0, y: 0, z: 0}
+          toTargetRotation: {x: 0, y: 0, z: 0, w: 0}
+          rotationVelocity: {x: 0, y: 0, z: 0, w: 0}
+          velocity: {x: 0, y: 0, z: 0}
+        startPosition: {x: 0, y: 0, z: 0}
+      upperLipRight:
+        name: 
+        boneId: 87
+        target:
+          length: 0
+          transform: {fileID: 0}
+          baseRotation: {x: 0, y: 0, z: 0, w: 1}
+          basePosition: {x: 0, y: 0, z: 0}
+          toBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+        bone:
+          transform: {fileID: 0}
+          length: 0
+          jointLimitations: 0
+          maxAngle: 0
+          minAngles: {x: 0, y: 0, z: 0}
+          maxAngles: {x: 0, y: 0, z: 0}
+          baseRotation: {x: 0, y: 0, z: 0, w: 1}
+          basePosition: {x: 0, y: 0, z: 0}
+          toTargetRotation: {x: 0, y: 0, z: 0, w: 0}
+          rotationVelocity: {x: 0, y: 0, z: 0, w: 0}
+          velocity: {x: 0, y: 0, z: 0}
+        startPosition: {x: 0, y: 0, z: 0}
+      lipLeft:
+        name: 
+        boneId: 88
+        target:
+          length: 0
+          transform: {fileID: 0}
+          baseRotation: {x: 0, y: 0, z: 0, w: 1}
+          basePosition: {x: 0, y: 0, z: 0}
+          toBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+        bone:
+          transform: {fileID: 0}
+          length: 0
+          jointLimitations: 0
+          maxAngle: 0
+          minAngles: {x: 0, y: 0, z: 0}
+          maxAngles: {x: 0, y: 0, z: 0}
+          baseRotation: {x: 0, y: 0, z: 0, w: 1}
+          basePosition: {x: 0, y: 0, z: 0}
+          toTargetRotation: {x: 0, y: 0, z: 0, w: 0}
+          rotationVelocity: {x: 0, y: 0, z: 0, w: 0}
+          velocity: {x: 0, y: 0, z: 0}
+        startPosition: {x: 0, y: 0, z: 0}
+      lipRight:
+        name: 
+        boneId: 89
+        target:
+          length: 0
+          transform: {fileID: 0}
+          baseRotation: {x: 0, y: 0, z: 0, w: 1}
+          basePosition: {x: 0, y: 0, z: 0}
+          toBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+        bone:
+          transform: {fileID: 0}
+          length: 0
+          jointLimitations: 0
+          maxAngle: 0
+          minAngles: {x: 0, y: 0, z: 0}
+          maxAngles: {x: 0, y: 0, z: 0}
+          baseRotation: {x: 0, y: 0, z: 0, w: 1}
+          basePosition: {x: 0, y: 0, z: 0}
+          toTargetRotation: {x: 0, y: 0, z: 0, w: 0}
+          rotationVelocity: {x: 0, y: 0, z: 0, w: 0}
+          velocity: {x: 0, y: 0, z: 0}
+        startPosition: {x: 0, y: 0, z: 0}
+      lowerLipLeft:
+        name: 
+        boneId: 90
+        target:
+          length: 0
+          transform: {fileID: 0}
+          baseRotation: {x: 0, y: 0, z: 0, w: 1}
+          basePosition: {x: 0, y: 0, z: 0}
+          toBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+        bone:
+          transform: {fileID: 0}
+          length: 0
+          jointLimitations: 0
+          maxAngle: 0
+          minAngles: {x: 0, y: 0, z: 0}
+          maxAngles: {x: 0, y: 0, z: 0}
+          baseRotation: {x: 0, y: 0, z: 0, w: 1}
+          basePosition: {x: 0, y: 0, z: 0}
+          toTargetRotation: {x: 0, y: 0, z: 0, w: 0}
+          rotationVelocity: {x: 0, y: 0, z: 0, w: 0}
+          velocity: {x: 0, y: 0, z: 0}
+        startPosition: {x: 0, y: 0, z: 0}
+      lowerLip:
+        name: 
+        boneId: 91
+        target:
+          length: 0
+          transform: {fileID: 0}
+          baseRotation: {x: 0, y: 0, z: 0, w: 1}
+          basePosition: {x: 0, y: 0, z: 0}
+          toBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+        bone:
+          transform: {fileID: 0}
+          length: 0
+          jointLimitations: 0
+          maxAngle: 0
+          minAngles: {x: 0, y: 0, z: 0}
+          maxAngles: {x: 0, y: 0, z: 0}
+          baseRotation: {x: 0, y: 0, z: 0, w: 1}
+          basePosition: {x: 0, y: 0, z: 0}
+          toTargetRotation: {x: 0, y: 0, z: 0, w: 0}
+          rotationVelocity: {x: 0, y: 0, z: 0, w: 0}
+          velocity: {x: 0, y: 0, z: 0}
+        startPosition: {x: 0, y: 0, z: 0}
+      lowerLipRight:
+        name: 
+        boneId: 92
+        target:
+          length: 0
+          transform: {fileID: 0}
+          baseRotation: {x: 0, y: 0, z: 0, w: 1}
+          basePosition: {x: 0, y: 0, z: 0}
+          toBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+        bone:
+          transform: {fileID: 0}
+          length: 0
+          jointLimitations: 0
+          maxAngle: 0
+          minAngles: {x: 0, y: 0, z: 0}
+          maxAngles: {x: 0, y: 0, z: 0}
+          baseRotation: {x: 0, y: 0, z: 0, w: 1}
+          basePosition: {x: 0, y: 0, z: 0}
+          toTargetRotation: {x: 0, y: 0, z: 0, w: 0}
+          rotationVelocity: {x: 0, y: 0, z: 0, w: 0}
+          velocity: {x: 0, y: 0, z: 0}
+        startPosition: {x: 0, y: 0, z: 0}
+      bones:
+      - name: 
+        boneId: 85
+        target:
+          length: 0
+          transform: {fileID: 0}
+          baseRotation: {x: 0, y: 0, z: 0, w: 1}
+          basePosition: {x: 0, y: 0, z: 0}
+          toBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+        bone:
+          transform: {fileID: 0}
+          length: 0
+          jointLimitations: 0
+          maxAngle: 0
+          minAngles: {x: 0, y: 0, z: 0}
+          maxAngles: {x: 0, y: 0, z: 0}
+          baseRotation: {x: 0, y: 0, z: 0, w: 1}
+          basePosition: {x: 0, y: 0, z: 0}
+          toTargetRotation: {x: 0, y: 0, z: 0, w: 0}
+          rotationVelocity: {x: 0, y: 0, z: 0, w: 0}
+          velocity: {x: 0, y: 0, z: 0}
+        startPosition: {x: 0, y: 0, z: 0}
+      - name: 
+        boneId: 86
+        target:
+          length: 0
+          transform: {fileID: 0}
+          baseRotation: {x: 0, y: 0, z: 0, w: 1}
+          basePosition: {x: 0, y: 0, z: 0}
+          toBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+        bone:
+          transform: {fileID: 0}
+          length: 0
+          jointLimitations: 0
+          maxAngle: 0
+          minAngles: {x: 0, y: 0, z: 0}
+          maxAngles: {x: 0, y: 0, z: 0}
+          baseRotation: {x: 0, y: 0, z: 0, w: 1}
+          basePosition: {x: 0, y: 0, z: 0}
+          toTargetRotation: {x: 0, y: 0, z: 0, w: 0}
+          rotationVelocity: {x: 0, y: 0, z: 0, w: 0}
+          velocity: {x: 0, y: 0, z: 0}
+        startPosition: {x: 0, y: 0, z: 0}
+      - name: 
+        boneId: 87
+        target:
+          length: 0
+          transform: {fileID: 0}
+          baseRotation: {x: 0, y: 0, z: 0, w: 1}
+          basePosition: {x: 0, y: 0, z: 0}
+          toBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+        bone:
+          transform: {fileID: 0}
+          length: 0
+          jointLimitations: 0
+          maxAngle: 0
+          minAngles: {x: 0, y: 0, z: 0}
+          maxAngles: {x: 0, y: 0, z: 0}
+          baseRotation: {x: 0, y: 0, z: 0, w: 1}
+          basePosition: {x: 0, y: 0, z: 0}
+          toTargetRotation: {x: 0, y: 0, z: 0, w: 0}
+          rotationVelocity: {x: 0, y: 0, z: 0, w: 0}
+          velocity: {x: 0, y: 0, z: 0}
+        startPosition: {x: 0, y: 0, z: 0}
+      - name: 
+        boneId: 88
+        target:
+          length: 0
+          transform: {fileID: 0}
+          baseRotation: {x: 0, y: 0, z: 0, w: 1}
+          basePosition: {x: 0, y: 0, z: 0}
+          toBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+        bone:
+          transform: {fileID: 0}
+          length: 0
+          jointLimitations: 0
+          maxAngle: 0
+          minAngles: {x: 0, y: 0, z: 0}
+          maxAngles: {x: 0, y: 0, z: 0}
+          baseRotation: {x: 0, y: 0, z: 0, w: 1}
+          basePosition: {x: 0, y: 0, z: 0}
+          toTargetRotation: {x: 0, y: 0, z: 0, w: 0}
+          rotationVelocity: {x: 0, y: 0, z: 0, w: 0}
+          velocity: {x: 0, y: 0, z: 0}
+        startPosition: {x: 0, y: 0, z: 0}
+      - name: 
+        boneId: 89
+        target:
+          length: 0
+          transform: {fileID: 0}
+          baseRotation: {x: 0, y: 0, z: 0, w: 1}
+          basePosition: {x: 0, y: 0, z: 0}
+          toBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+        bone:
+          transform: {fileID: 0}
+          length: 0
+          jointLimitations: 0
+          maxAngle: 0
+          minAngles: {x: 0, y: 0, z: 0}
+          maxAngles: {x: 0, y: 0, z: 0}
+          baseRotation: {x: 0, y: 0, z: 0, w: 1}
+          basePosition: {x: 0, y: 0, z: 0}
+          toTargetRotation: {x: 0, y: 0, z: 0, w: 0}
+          rotationVelocity: {x: 0, y: 0, z: 0, w: 0}
+          velocity: {x: 0, y: 0, z: 0}
+        startPosition: {x: 0, y: 0, z: 0}
+      - name: 
+        boneId: 90
+        target:
+          length: 0
+          transform: {fileID: 0}
+          baseRotation: {x: 0, y: 0, z: 0, w: 1}
+          basePosition: {x: 0, y: 0, z: 0}
+          toBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+        bone:
+          transform: {fileID: 0}
+          length: 0
+          jointLimitations: 0
+          maxAngle: 0
+          minAngles: {x: 0, y: 0, z: 0}
+          maxAngles: {x: 0, y: 0, z: 0}
+          baseRotation: {x: 0, y: 0, z: 0, w: 1}
+          basePosition: {x: 0, y: 0, z: 0}
+          toTargetRotation: {x: 0, y: 0, z: 0, w: 0}
+          rotationVelocity: {x: 0, y: 0, z: 0, w: 0}
+          velocity: {x: 0, y: 0, z: 0}
+        startPosition: {x: 0, y: 0, z: 0}
+      - name: 
+        boneId: 91
+        target:
+          length: 0
+          transform: {fileID: 0}
+          baseRotation: {x: 0, y: 0, z: 0, w: 1}
+          basePosition: {x: 0, y: 0, z: 0}
+          toBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+        bone:
+          transform: {fileID: 0}
+          length: 0
+          jointLimitations: 0
+          maxAngle: 0
+          minAngles: {x: 0, y: 0, z: 0}
+          maxAngles: {x: 0, y: 0, z: 0}
+          baseRotation: {x: 0, y: 0, z: 0, w: 1}
+          basePosition: {x: 0, y: 0, z: 0}
+          toTargetRotation: {x: 0, y: 0, z: 0, w: 0}
+          rotationVelocity: {x: 0, y: 0, z: 0, w: 0}
+          velocity: {x: 0, y: 0, z: 0}
+        startPosition: {x: 0, y: 0, z: 0}
+      - name: 
+        boneId: 92
+        target:
+          length: 0
+          transform: {fileID: 0}
+          baseRotation: {x: 0, y: 0, z: 0, w: 1}
+          basePosition: {x: 0, y: 0, z: 0}
+          toBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+        bone:
+          transform: {fileID: 0}
+          length: 0
+          jointLimitations: 0
+          maxAngle: 0
+          minAngles: {x: 0, y: 0, z: 0}
+          maxAngles: {x: 0, y: 0, z: 0}
+          baseRotation: {x: 0, y: 0, z: 0, w: 1}
+          basePosition: {x: 0, y: 0, z: 0}
+          toTargetRotation: {x: 0, y: 0, z: 0, w: 0}
+          rotationVelocity: {x: 0, y: 0, z: 0, w: 0}
+          velocity: {x: 0, y: 0, z: 0}
+        startPosition: {x: 0, y: 0, z: 0}
+    gazeDirection: {x: 0, y: 0, z: 1}
+    localGazeDirection: {x: 0, y: 0, z: 1}
+    focusPoint: {x: 0, y: 0, z: 0}
+    focusObject: {fileID: 0}
+    jaw:
+      name: 
+      boneId: 93
+      target:
+        length: 0
+        transform: {fileID: 0}
+        baseRotation: {x: 0, y: 0, z: 0, w: 1}
+        basePosition: {x: 0, y: 0, z: 0}
+        toBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+      bone:
+        transform: {fileID: 0}
+        length: 0
+        jointLimitations: 0
+        maxAngle: 0
+        minAngles: {x: 0, y: 0, z: 0}
+        maxAngles: {x: 0, y: 0, z: 0}
+        baseRotation: {x: 0, y: 0, z: 0, w: 1}
+        basePosition: {x: 0, y: 0, z: 0}
+        toTargetRotation: {x: 0, y: 0, z: 0, w: 0}
+        rotationVelocity: {x: 0, y: 0, z: 0, w: 0}
+        velocity: {x: 0, y: 0, z: 0}
+    pose: 0
+    poseMixer:
+      mixedPoses: []
+      currentPoseIx: 0
+      detectedPose: {fileID: 0}
+    directFaceMovements: 1
   smileValue: 0
   puckerValue: 0
   frownValue: 0
@@ -11070,6 +12801,14 @@ MonoBehaviour:
   rotationConfidence: 0
   positionConfidence: 0
   autoUpdate: 1
+  isLeft: 0
+  joystick: {x: 0, y: 0, z: 0}
+  indexTrigger: 0
+  handTrigger: 0
+  buttonAX: 0
+  buttonBY: 0
+  thumbrest: 0
+  positionalTracking: 1
 --- !u!1 &1878524149782770
 GameObject:
   m_ObjectHideFlags: 0
@@ -12119,6 +13858,12 @@ MonoBehaviour:
     sensor2TargetPosition: {x: 0, y: 0, z: 0}
     sensor2TargetRotation: {x: 0, y: 0, z: 0, w: 0}
     armSwing: 0
+  oculus:
+    enabled: 1
+    target: {fileID: 0}
+    sensorTransform: {fileID: 0}
+    sensor2TargetPosition: {x: 0, y: 0, z: 0}
+    sensor2TargetRotation: {x: 0, y: 0, z: 0, w: 0}
   stretchlessTarget: {fileID: 0}
   shoulder:
     name: 
@@ -13064,6 +14809,12 @@ MonoBehaviour:
     sensor2TargetPosition: {x: 0, y: 0, z: 0}
     sensor2TargetRotation: {x: 0, y: 0, z: 0, w: 0}
     armSwing: 0
+  oculus:
+    enabled: 1
+    target: {fileID: 114352831535022258}
+    sensorTransform: {fileID: 0}
+    sensor2TargetPosition: {x: -0.1, y: 0.05, z: -0.04}
+    sensor2TargetRotation: {x: -0.49999994, y: -0.5, z: -0.5, w: 0.49999994}
   stretchlessTarget: {fileID: 0}
   shoulder:
     name: 
@@ -13950,6 +15701,12 @@ MonoBehaviour:
     sensor2TargetPosition: {x: 0, y: 0, z: 0}
     sensor2TargetRotation: {x: 0, y: 0, z: 0, w: 0}
     armSwing: 0
+  oculus:
+    enabled: 1
+    target: {fileID: 0}
+    sensorTransform: {fileID: 0}
+    sensor2TargetPosition: {x: 0, y: 0, z: 0}
+    sensor2TargetRotation: {x: 0, y: 0, z: 0, w: 0}
   stretchlessTarget: {fileID: 0}
   shoulder:
     name: 
@@ -14333,7 +16090,6 @@ MeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -14575,7 +16331,6 @@ MeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
