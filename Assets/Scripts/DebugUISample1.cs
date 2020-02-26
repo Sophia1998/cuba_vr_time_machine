@@ -37,7 +37,7 @@ public class DebugUISample1 : MonoBehaviour
     }
     public void switchToSceneSquare()
     {
-        //SceneManager.LoadScene(0);
+        SceneManager.LoadScene("square");
     }
 
     void Update()
@@ -50,8 +50,4 @@ public class DebugUISample1 : MonoBehaviour
         }
     }
 
-    void LogButtonPressed()
-    {
-        Debug.Log("Button pressed");
-    }
 }
