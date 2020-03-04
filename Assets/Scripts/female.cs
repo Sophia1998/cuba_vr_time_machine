@@ -8,7 +8,6 @@ public class female : MonoBehaviour
     GameObject player;
     float distance;
     float radius;
-    GameObject cube;
     // Start is called before the first frame update
     void Start()
     {
@@ -20,12 +19,14 @@ public class female : MonoBehaviour
     void Update()
     {
         player = GameObject.Find("Humanoid");
-        cube = GameObject.Find("Cube");
         distance = (transform.position - player.transform.position).sqrMagnitude;
         Debug.Log(distance);
+
         if(distance < radius)
         {
-            cube.transform.localScale = new Vector3(0.5f, 0.5f, 0.5f);
+            Vector3 direction = player.transform.position - transform.position;
+            Quaternion rotation = Quaternion.LookRotation(direction);
+            transform.rotation = rotation;
             animator.SetTrigger("greet");
         }
     }
