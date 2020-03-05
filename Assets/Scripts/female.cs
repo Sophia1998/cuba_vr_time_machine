@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class female : MonoBehaviour
 {
@@ -20,14 +21,20 @@ public class female : MonoBehaviour
     {
         player = GameObject.Find("Humanoid");
         distance = (transform.position - player.transform.position).sqrMagnitude;
-        Debug.Log(distance);
+       // Debug.Log(distance);
 
         if(distance < radius)
         {
+           
             Vector3 direction = player.transform.position - transform.position;
             Quaternion rotation = Quaternion.LookRotation(direction);
             transform.rotation = rotation;
             animator.SetTrigger("greet");
+        }
+        else
+        {
+           transform.rotation = Quaternion.LookRotation(new Vector3(0,0,-1));
+            animator.SetTrigger("idle");
         }
     }
 }
