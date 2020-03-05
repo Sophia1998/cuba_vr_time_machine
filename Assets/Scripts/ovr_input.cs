@@ -15,9 +15,7 @@ public class ovr_input : MonoBehaviour
         OVRInput.FixedUpdate();
         if (OVRInput.Get(OVRInput.Button.One))
         {
-            //cube.GetComponent<cube_physics>().Angle = new Vector3(3, 3, 3);
             SceneManager.LoadScene("menu");
         }
-
     }
 }
