@@ -18,6 +18,9 @@ public class ui : MonoBehaviour
     public float distance;
     public float radius;
     public bool firstReach;
+    public AudioClip hi_clip;
+    public float volume;
+    AudioSource hi_src;
     // Start is called before the first frame update
     void Start()
     {
@@ -27,7 +30,7 @@ public class ui : MonoBehaviour
         button1 = GameObject.Find("Canvas/ui/Button1");
         button1.SetActive(false);
         firstReach = false;
-        
+        hi_src = GameObject.Find("cuban_female2_Unity").GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -45,6 +48,7 @@ public class ui : MonoBehaviour
         {
             dialogbox.enabled = true;
             chat.text = "Hi!!!!";
+            hi_src.PlayOneShot(hi_clip,volume);
             button1.SetActive(true);
             buttonText.text = "Hi!";
             buttonController();
