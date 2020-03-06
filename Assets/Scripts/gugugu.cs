@@ -16,6 +16,8 @@ public class gugugu : MonoBehaviour
     public float distance;
     public float timeleft;
     public bool familiar;
+
+    public bool hop;
     // Start is called before the first frame update
     void Start()
     {
@@ -27,6 +29,7 @@ public class gugugu : MonoBehaviour
         player = GameObject.Find("Humanoid");
         ani = bird.GetComponent<Animator>();
         timeleft = 3f;
+        hop = false;
 }
 
     // Update is called once per frame
@@ -36,17 +39,29 @@ public class gugugu : MonoBehaviour
         distance = (transform.position - player.transform.position).sqrMagnitude;
         Debug.Log(distance);
         //if too close and hasn't feed yet, hop away
-        if (distance < 15f && familiar == false)
+        if (distance < 3f)
         {
-            corn.enableEmission = false;
-            ani.SetBool("walkforward", false);
-            ani.SetBool("walkleft", false);
-            ani.SetBool("walkright", false);
-            ani.SetBool("hop", true);
-            transform.position = transform.position + new Vector3(0.005f, 0, 0)*Time.deltaTime;
-            transform.Translate(new Vector3(0, 0, 0));
+            //corn.enableEmission = false;
+            ani.SetBool("walkforward", true);
+          //  ani.SetBool("walkleft", false);
+           // ani.SetBool("walkright", false);
+           // ani.SetBool("hop", true);
+           // ani.SetBool("walkforward", false);
+           // hop = true;
+            //transform.Translate(new Vector3(0, 0, 0));
         }
-        //for testing if choose to feed 
+       /* else
+        {
+            hop = false;
+        }
+        float n = 0;
+        if (hop)
+        {
+            float x_pos = transform.position.x + Random.Range(0, 5) * 0.001f;
+            float z_pos = transform.position.z + Random.Range(0, 5) * 0.001f;
+            transform.position = new Vector3(x_pos, transform.position.y, z_pos);
+        }
+      /*  //for testing if choose to feed 
         else if (Input.GetKeyDown(KeyCode.S))
         {
             corn.enableEmission = true;
@@ -120,6 +135,6 @@ public class gugugu : MonoBehaviour
                     ani.SetBool("land", false);
                 }
                 }
-        }
+        }*/
     }
 }
