@@ -21,7 +21,7 @@ public class gugugu : MonoBehaviour
     {
         feeding = false;
         familiar = false;
-        corn = GameObject.Find("Huamnoid/corn");
+        corn = GameObject.Find("Humanoid/corn");
         corn.SetActive(false);
         bird = GameObject.Find("Pigeon1");
         player = GameObject.Find("Humanoid");
