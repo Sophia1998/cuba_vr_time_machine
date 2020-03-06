@@ -1625,15 +1625,6 @@ MonoBehaviour:
   rotationConfidence: 0
   positionConfidence: 0
   autoUpdate: 1
-  trackerId: -1
-  isLeft: 0
-  controllerType: 0
-  joystick: {x: 0, y: 0, z: 0}
-  touchpad: {x: 0, y: 0, z: 0}
-  trigger: 0
-  grip: 0
-  aButton: 0
-  bButton: 0
 --- !u!1 &290281290
 GameObject:
   m_ObjectHideFlags: 0
@@ -2608,22 +2599,6 @@ MonoBehaviour:
     sensor2TargetPosition: {x: 0, y: 0, z: 0}
     sensor2TargetRotation: {x: 0, y: 0, z: 0, w: 0}
     armSwing: 0
-  steamVR:
-    enabled: 1
-    target: {fileID: 311238507}
-    sensorTransform: {fileID: 1435907872}
-    sensor2TargetPosition: {x: -0.14004518, y: 0.040004715, z: -0.080001794}
-    sensor2TargetRotation: {x: -0.18301302, y: -0.18301341, z: -0.68301326, w: 0.6830119}
-    steamVrController: {fileID: 0}
-  openVR:
-    enabled: 1
-    target: {fileID: 311238507}
-    sensorTransform: {fileID: 282390815}
-    sensor2TargetPosition: {x: -0.14004518, y: 0.040004715, z: -0.080001794}
-    sensor2TargetRotation: {x: -0.18301302, y: -0.18301341, z: -0.68301326, w: 0.6830119}
-    openVRController: {fileID: 0}
-    controllerType: 0
-    useSkeletalInput: 1
   oculus:
     enabled: 1
     target: {fileID: 311238507}
@@ -4869,7 +4844,6 @@ MonoBehaviour:
   rotationConfidence: 0
   positionConfidence: 0
   autoUpdate: 1
-  trackerId: 0
 --- !u!1 &587173678
 GameObject:
   m_ObjectHideFlags: 0
@@ -7115,25 +7089,12 @@ MonoBehaviour:
     enabled: 0
     trackerTransform: {fileID: 0}
     subTrackers: []
-  steam:
-    status: 0
-    enabled: 1
-    trackerTransform: {fileID: 1256246354}
-    subTrackers: []
-    hmd: {fileID: 0}
-    controllers: []
-  openVR:
-    status: 0
-    enabled: 1
-    trackerTransform: {fileID: 1330592487}
-    subTrackers: []
-    hmd: {fileID: 0}
-    controllers: []
   oculus:
     status: 0
     enabled: 1
     trackerTransform: {fileID: 131130363}
     subTrackers: []
+    androidDeviceType: 2
   forwardSpeed: 1
   backwardSpeed: 0.6
   sidewardSpeed: 1
@@ -9401,22 +9362,6 @@ MonoBehaviour:
     sensor2TargetPosition: {x: 0, y: 0, z: 0}
     sensor2TargetRotation: {x: 0, y: 0, z: 0, w: 0}
     armSwing: 0
-  steamVR:
-    enabled: 1
-    target: {fileID: 0}
-    sensorTransform: {fileID: 0}
-    sensor2TargetPosition: {x: 0, y: 0, z: 0}
-    sensor2TargetRotation: {x: 0, y: 0, z: 0, w: 0}
-    steamVrController: {fileID: 0}
-  openVR:
-    enabled: 1
-    target: {fileID: 0}
-    sensorTransform: {fileID: 0}
-    sensor2TargetPosition: {x: 0, y: 0, z: 0}
-    sensor2TargetRotation: {x: 0, y: 0, z: 0, w: 0}
-    openVRController: {fileID: 0}
-    controllerType: 0
-    useSkeletalInput: 1
   oculus:
     enabled: 1
     target: {fileID: 0}
@@ -9918,20 +9863,6 @@ MonoBehaviour:
     sensor2TargetRotation: {x: 0, y: 0, z: 0, w: 0}
     headAnimation: 1
     faceAnimation: 1
-  steamVR:
-    enabled: 1
-    target: {fileID: 1172316879}
-    sensorTransform: {fileID: 0}
-    sensor2TargetPosition: {x: 0.00029402185, y: -0.03600979, z: -0.105798304}
-    sensor2TargetRotation: {x: -0, y: -0, z: -0, w: 1}
-    steamVrHmd: {fileID: 0}
-  openVR:
-    enabled: 1
-    target: {fileID: 1172316879}
-    sensorTransform: {fileID: 0}
-    sensor2TargetPosition: {x: 0.00029402185, y: -0.03600979, z: -0.105798304}
-    sensor2TargetRotation: {x: -0, y: -0, z: -0, w: 1}
-    hmd: {fileID: 0}
   oculus:
     enabled: 1
     target: {fileID: 1172316879}
@@ -11049,6 +10980,116 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b544816461f324e56a39767fdeb5b114, type: 3}
+--- !u!1 &1186620699 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 100006, guid: b544816461f324e56a39767fdeb5b114,
+    type: 3}
+  m_PrefabInstance: {fileID: 1186620698}
+  m_PrefabAsset: {fileID: 0}
+--- !u!82 &1186620700
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1186620699}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: b22b56f3893dac24fbe572770cbe6828, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 0.743
+  m_Pitch: 1
+  Loop: 1
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!81 &1186620701
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1186620699}
+  m_Enabled: 1
 --- !u!1 &1188086651
 GameObject:
   m_ObjectHideFlags: 0
@@ -11725,13 +11766,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e6afa301bf282314c95f7dc30e4ba468, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tracker:
-    status: 0
-    enabled: 0
-    trackerTransform: {fileID: 0}
-    subTrackers: []
-    hmd: {fileID: 0}
-    controllers: []
 --- !u!1 &1259811819
 GameObject:
   m_ObjectHideFlags: 0
@@ -12824,14 +12858,6 @@ MonoBehaviour:
   rotationConfidence: 0
   positionConfidence: 0
   autoUpdate: 1
-  trackerId: -1
-  isLeft: 0
-  controllerType: 0
-  touchPad: {x: 0, y: 0, z: 0}
-  trigger: 0
-  gripButton: 0
-  menuButton: 0
-  aButton: 0
 --- !u!4 &1436789779 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: e7d946ff6489149178114101bff87533,
@@ -14279,22 +14305,6 @@ MonoBehaviour:
     sensor2TargetPosition: {x: 0, y: 0, z: 0}
     sensor2TargetRotation: {x: 0, y: 0, z: 0, w: 0}
     armSwing: 0
-  steamVR:
-    enabled: 1
-    target: {fileID: 0}
-    sensorTransform: {fileID: 0}
-    sensor2TargetPosition: {x: 0, y: 0, z: 0}
-    sensor2TargetRotation: {x: 0, y: 0, z: 0, w: 0}
-    steamVrController: {fileID: 0}
-  openVR:
-    enabled: 1
-    target: {fileID: 0}
-    sensorTransform: {fileID: 0}
-    sensor2TargetPosition: {x: 0, y: 0, z: 0}
-    sensor2TargetRotation: {x: 0, y: 0, z: 0, w: 0}
-    openVRController: {fileID: 0}
-    controllerType: 0
-    useSkeletalInput: 1
   oculus:
     enabled: 1
     target: {fileID: 0}
@@ -15077,20 +15087,6 @@ MonoBehaviour:
     sensor2TargetRotation: {x: 0, y: 0, z: 0, w: 0}
     headAnimation: 1
     faceAnimation: 1
-  steamVR:
-    enabled: 1
-    target: {fileID: 0}
-    sensorTransform: {fileID: 0}
-    sensor2TargetPosition: {x: 0, y: 0, z: 0}
-    sensor2TargetRotation: {x: 0, y: 0, z: 0, w: 0}
-    steamVrHmd: {fileID: 0}
-  openVR:
-    enabled: 1
-    target: {fileID: 0}
-    sensorTransform: {fileID: 0}
-    sensor2TargetPosition: {x: 0, y: 0, z: 0}
-    sensor2TargetRotation: {x: 0, y: 0, z: 0, w: 0}
-    hmd: {fileID: 0}
   oculus:
     enabled: 1
     target: {fileID: 0}
@@ -17239,22 +17235,6 @@ MonoBehaviour:
     sensor2TargetPosition: {x: 0, y: 0, z: 0}
     sensor2TargetRotation: {x: 0, y: 0, z: 0, w: 0}
     armSwing: 0
-  steamVR:
-    enabled: 1
-    target: {fileID: 1684329129}
-    sensorTransform: {fileID: 1969100168}
-    sensor2TargetPosition: {x: 0.14004514, y: 0.03999333, z: -0.08000185}
-    sensor2TargetRotation: {x: -0.18301336, y: 0.18301333, z: 0.68301284, w: 0.68301225}
-    steamVrController: {fileID: 0}
-  openVR:
-    enabled: 1
-    target: {fileID: 1684329129}
-    sensorTransform: {fileID: 1995672459}
-    sensor2TargetPosition: {x: 0.14004514, y: 0.03999333, z: -0.08000185}
-    sensor2TargetRotation: {x: -0.18301336, y: 0.18301333, z: 0.68301284, w: 0.68301225}
-    openVRController: {fileID: 0}
-    controllerType: 0
-    useSkeletalInput: 1
   oculus:
     enabled: 1
     target: {fileID: 1684329129}
@@ -18667,14 +18647,6 @@ MonoBehaviour:
   rotationConfidence: 0
   positionConfidence: 0
   autoUpdate: 1
-  trackerId: -1
-  isLeft: 1
-  controllerType: 0
-  touchPad: {x: 0, y: 0, z: 0}
-  trigger: 0
-  gripButton: 0
-  menuButton: 0
-  aButton: 0
 --- !u!1 &1971497821
 GameObject:
   m_ObjectHideFlags: 0
@@ -19052,15 +19024,6 @@ MonoBehaviour:
   rotationConfidence: 0
   positionConfidence: 0
   autoUpdate: 1
-  trackerId: -1
-  isLeft: 1
-  controllerType: 0
-  joystick: {x: 0, y: 0, z: 0}
-  touchpad: {x: 0, y: 0, z: 0}
-  trigger: 0
-  grip: 0
-  aButton: 0
-  bButton: 0
 --- !u!1001 &1999356334
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -19398,7 +19361,6 @@ MonoBehaviour:
   rotationConfidence: 0
   positionConfidence: 0
   autoUpdate: 1
-  trackerId: 0
 --- !u!1 &2036095626
 GameObject:
   m_ObjectHideFlags: 0
