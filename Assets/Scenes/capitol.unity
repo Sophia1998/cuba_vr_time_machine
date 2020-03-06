@@ -861,7 +861,7 @@ GameObject:
   - component: {fileID: 94728893}
   - component: {fileID: 94728892}
   m_Layer: 0
-  m_Name: Sample 2_Emission
+  m_Name: corn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -874,13 +874,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 94728890}
-  m_LocalRotation: {x: -0, y: -0, z: 1, w: 0}
+  m_LocalRotation: {x: 0.17364816, y: 0, z: 0.9848078, w: 0}
   m_LocalPosition: {x: 0, y: 1.2, z: 0.5}
   m_LocalScale: {x: 0.2, y: 0.2, z: 0.2}
   m_Children: []
   m_Father: {fileID: 366293315}
   m_RootOrder: 9
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 180}
+  m_LocalEulerAnglesHint: {x: 0, y: 20, z: 180}
 --- !u!199 &94728892
 ParticleSystemRenderer:
   serializedVersion: 6
@@ -899,7 +899,7 @@ ParticleSystemRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: dac17f5a2d57b3b4e915ae0b881d2db6, type: 2}
+  - {fileID: 2100000, guid: 01bad0f5974dfc64f926aa57f9d8840d, type: 2}
   - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
@@ -939,9 +939,9 @@ ParticleSystemRenderer:
   m_AllowRoll: 1
   m_VertexStreams: 0001030405
   m_Mesh: {fileID: 4300000, guid: 709c69425bca5024187b53ff77295b42, type: 3}
-  m_Mesh1: {fileID: 4300000, guid: 71a61d9d3436f0c498db74ef4c0b1510, type: 3}
-  m_Mesh2: {fileID: 4300000, guid: a91a8bb4525bf6c48a79dfdfc9f96fdf, type: 3}
-  m_Mesh3: {fileID: 4300000, guid: 25847af17ecfe584391db256c66b28ae, type: 3}
+  m_Mesh1: {fileID: 0}
+  m_Mesh2: {fileID: 0}
+  m_Mesh3: {fileID: 0}
   m_MaskInteraction: 0
 --- !u!198 &94728893
 ParticleSystem:
@@ -1026,7 +1026,7 @@ ParticleSystem:
     startLifetime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 8
+      scalar: 50
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -1648,7 +1648,7 @@ ParticleSystem:
     sphericalDirectionAmount: 0
     randomPositionAmount: 0
     radius:
-      value: 0.2
+      value: 0.1
       mode: 0
       spread: 0
       speed:
@@ -1705,7 +1705,7 @@ ParticleSystem:
           m_PostInfinity: 2
           m_RotationOrder: 4
     arc:
-      value: 360
+      value: 90
       mode: 0
       spread: 0
       speed:
@@ -4209,7 +4209,7 @@ ParticleSystem:
     range: {x: 0, y: 1}
     separateAxes: 0
   RotationBySpeedModule:
-    enabled: 1
+    enabled: 0
     x:
       serializedVersion: 2
       minMaxState: 0
@@ -6931,8 +6931,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 302222585}
-  m_LocalRotation: {x: -0.0006051948, y: 0.058076806, z: 0.0063374336, w: 0.9982919}
-  m_LocalPosition: {x: 0.26173544, y: -0.0000002615743, z: 0.0000000114087015}
+  m_LocalRotation: {x: 0.017230224, y: 0.058180742, z: 0.005297888, w: 0.9981434}
+  m_LocalPosition: {x: 0.2641673, y: -0.0030151966, z: 0.020489424}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 415123519}
@@ -8286,8 +8286,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 352555757}
-  m_LocalRotation: {x: -0.046466682, y: 0.000057537305, z: 0.0014228482, w: 0.99891883}
-  m_LocalPosition: {x: 8.731149e-10, y: 0.10364075, z: 0.0000000037252903}
+  m_LocalRotation: {x: -0.028612725, y: 0.000082885876, z: 0.0014206197, w: 0.9995896}
+  m_LocalPosition: {x: 0.0000014336547, y: 0.10427647, z: 0.010876822}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 612487329}
@@ -12841,14 +12841,14 @@ MonoBehaviour:
     enabled: 1
     target: {fileID: 664091491}
     sensorTransform: {fileID: 1093127246}
-    sensor2TargetPosition: {x: -0.13999999, y: 0.039999932, z: -0.07999999}
+    sensor2TargetPosition: {x: -0.13999999, y: 0.03999998, z: -0.07999999}
     sensor2TargetRotation: {x: -0.18301271, y: -0.18301271, z: -0.6830127, w: 0.6830127}
     steamVrController: {fileID: 0}
   openVR:
     enabled: 1
     target: {fileID: 664091491}
     sensorTransform: {fileID: 566297116}
-    sensor2TargetPosition: {x: -0.13999999, y: 0.039999932, z: -0.07999999}
+    sensor2TargetPosition: {x: -0.13999999, y: 0.03999998, z: -0.07999999}
     sensor2TargetRotation: {x: -0.18301271, y: -0.18301271, z: -0.6830127, w: 0.6830127}
     openVRController: {fileID: 0}
     controllerType: 0
@@ -12857,7 +12857,7 @@ MonoBehaviour:
     enabled: 1
     target: {fileID: 664091491}
     sensorTransform: {fileID: 1656905955}
-    sensor2TargetPosition: {x: -0.100011416, y: 0.04999921, z: -0.04000141}
+    sensor2TargetPosition: {x: -0.10001141, y: 0.049999245, z: -0.040001407}
     sensor2TargetRotation: {x: -0.49999905, y: -0.49999982, z: -0.50000054, w: 0.5000007}
   stretchlessTarget: {fileID: 0}
   shoulder:
@@ -13114,8 +13114,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 678085444}
-  m_LocalRotation: {x: -0.0900289, y: 0.00085646805, z: 0.026445579, w: 0.99558765}
-  m_LocalPosition: {x: -0.00026690168, y: -0.38649476, z: -0.00039169192}
+  m_LocalRotation: {x: -0.07222757, y: 0.0013287036, z: 0.026425097, w: 0.9970372}
+  m_LocalPosition: {x: 0.00013610379, y: -0.39494365, z: -0.026224181}
   m_LocalScale: {x: 1, y: 0.99999994, z: 1}
   m_Children:
   - {fileID: 225855791}
@@ -14093,14 +14093,14 @@ MonoBehaviour:
     enabled: 1
     target: {fileID: 704699054}
     sensorTransform: {fileID: 57601502}
-    sensor2TargetPosition: {x: 0.14000005, y: 0.039999966, z: -0.08}
+    sensor2TargetPosition: {x: 0.14000008, y: 0.039999954, z: -0.08}
     sensor2TargetRotation: {x: -0.18301271, y: 0.18301271, z: 0.6830127, w: 0.6830127}
     steamVrController: {fileID: 0}
   openVR:
     enabled: 1
     target: {fileID: 704699054}
     sensorTransform: {fileID: 1982019317}
-    sensor2TargetPosition: {x: 0.14000005, y: 0.039999966, z: -0.08}
+    sensor2TargetPosition: {x: 0.14000008, y: 0.039999954, z: -0.08}
     sensor2TargetRotation: {x: -0.18301271, y: 0.18301271, z: 0.6830127, w: 0.6830127}
     openVRController: {fileID: 0}
     controllerType: 0
@@ -14109,7 +14109,7 @@ MonoBehaviour:
     enabled: 1
     target: {fileID: 704699054}
     sensorTransform: {fileID: 1196693304}
-    sensor2TargetPosition: {x: 0.10000175, y: 0.05000163, z: -0.040000793}
+    sensor2TargetPosition: {x: 0.10000177, y: 0.050001614, z: -0.040000793}
     sensor2TargetRotation: {x: -0.4999972, y: 0.4999989, z: 0.500002, w: 0.50000197}
   stretchlessTarget: {fileID: 0}
   shoulder:
@@ -16460,8 +16460,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 984059058}
-  m_LocalRotation: {x: 0.017865747, y: -0.000000017189361, z: -0.0000009750526, w: 0.99984044}
-  m_LocalPosition: {x: 0.00000038911747, y: 0.96448505, z: -0.070058525}
+  m_LocalRotation: {x: -0, y: 2.333987e-10, z: -0, w: 1}
+  m_LocalPosition: {x: 2.7755599e-18, y: 0.96801895, z: -0.07455683}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1333504140}
@@ -19582,7 +19582,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 100258, guid: 537684256affe5d4c8fbdc3e0873fa43, type: 3}
       propertyPath: m_Name
-      value: PigeonMiddlePoly
+      value: Pigeon1
       objectReference: {fileID: 0}
     - target: {fileID: 400258, guid: 537684256affe5d4c8fbdc3e0873fa43, type: 3}
       propertyPath: m_LocalPosition.x
@@ -19643,7 +19643,7 @@ PrefabInstance:
     - target: {fileID: 9500000, guid: 537684256affe5d4c8fbdc3e0873fa43, type: 3}
       propertyPath: m_Controller
       value: 
-      objectReference: {fileID: 9100000, guid: 360b2fa32431da943923581deca6544c, type: 2}
+      objectReference: {fileID: 9100000, guid: bbe62a392aa941344adcc7c6a28b2f8e, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 537684256affe5d4c8fbdc3e0873fa43, type: 3}
 --- !u!1 &1461329194
@@ -20782,8 +20782,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1618329062}
-  m_LocalRotation: {x: -0.09002816, y: -0.0008564037, z: -0.026443923, w: 0.9955877}
-  m_LocalPosition: {x: 0.00023612501, y: -0.3870814, z: -0.0003466606}
+  m_LocalRotation: {x: -0.07222679, y: -0.001328803, z: -0.026425378, w: 0.99703723}
+  m_LocalPosition: {x: -0.0001387214, y: -0.39494333, z: -0.026224606}
   m_LocalScale: {x: 1, y: 0.99999994, z: 1}
   m_Children:
   - {fileID: 1439743235}
@@ -21293,8 +21293,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1681217640}
-  m_LocalRotation: {x: -0.0004950896, y: -0.08793008, z: -0.007306173, w: 0.99609977}
-  m_LocalPosition: {x: -0.2617353, y: -0.00000015813568, z: -0.000000053085387}
+  m_LocalRotation: {x: 0.017301174, y: -0.08804675, z: -0.0057350886, w: 0.99594957}
+  m_LocalPosition: {x: -0.26538685, y: -0.00302411, z: 0.02027728}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1940477647}
@@ -25276,36 +25276,27 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1457492606}
   m_PrefabAsset: {fileID: 0}
---- !u!136 &1954307316
-CapsuleCollider:
+--- !u!114 &1954307320
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1954307315}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.06459018
-  m_Height: 0.16154425
-  m_Direction: 1
-  m_Center: {x: 0, y: 0.07, z: 0.02}
---- !u!54 &1954307317
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1954307315}
-  serializedVersion: 2
-  m_Mass: 15
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe42d7988ea6df54d8bc6f6bf314f059, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ani: {fileID: 0}
+  bird: {fileID: 0}
+  corn: {fileID: 0}
+  random: 0
+  walkspeed: 1
+  feeding: 0
+  distance: 0
+  timeleft: 0
+  familiar: 0
 --- !u!1 &1965443485
 GameObject:
   m_ObjectHideFlags: 0
