@@ -17,6 +17,7 @@ public class ui : MonoBehaviour
     public GameObject female;
     public float distance;
     public float radius;
+    public bool firstReach;
     // Start is called before the first frame update
     void Start()
     {
@@ -25,42 +26,47 @@ public class ui : MonoBehaviour
         counter = 1;
         button1 = GameObject.Find("Canvas/ui/Button1");
         button1.SetActive(false);
+        firstReach = false;
         
     }
 
     // Update is called once per frame
     void Update()
     {
+
         player = GameObject.Find("Humanoid");
         female = GameObject.Find("cuban_female2_Unity");
         distance = (female.transform.position - player.transform.position).sqrMagnitude;
         if (distance < radius)
         {
-            dialogbox.enabled = true;
-            chat.text = "Hello!";
-            button1.SetActive(true);
-            buttonText.text = "How are you?";
-           
+            firstReach = true;
         }
-        else
+        if (firstReach)
         {
-            dialogbox.enabled = false;
-            chat.text = "";
-            button1.SetActive(false);
+            dialogbox.enabled = true;
+            chat.text = "Hi!!!!";
+            button1.SetActive(true);
+            buttonText.text = "Hi!";
+            buttonController();
+            firstReach = false;
         }
+      /*  else
+        { 
+            buttonController();
+        }*/
     }
     public void buttonController()
     {
-        if (counter == 1)
+        if (OVRInput.GetDown(OVRInput.Button.Four) && counter == 1)
         {
-            chat.text = "I'm fine! Thank you!";
-            buttonText.text = "Bye!";
+            Destroy(GameObject.Find("Canvas"));
+            //chat.text = "I'm fine! Thank you!";
+            //buttonText.text = "Bye!";
             counter++;
         }
-        else if (counter == 2)
+      /*  else if (OVRInput.GetDown(OVRInput.Button.Three) && counter == 2)
         {
-            chat.text = "";
-            button1.SetActive(false);
-        }
+            Destroy(GameObject.Find("Canvas"));
+        }*/
     }
 }
