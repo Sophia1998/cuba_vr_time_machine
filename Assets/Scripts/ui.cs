@@ -18,6 +18,7 @@ public class ui : MonoBehaviour
     public float distance;
     public float radius;
     public bool firstReach;
+    public bool ffirstReach;
     public AudioClip hi_clip;
     public float volume;
     AudioSource hi_src;
@@ -30,6 +31,7 @@ public class ui : MonoBehaviour
         button1 = GameObject.Find("Canvas/ui/Button1");
         button1.SetActive(false);
         firstReach = false;
+        ffirstReach = true;
         hi_src = GameObject.Find("cuban_female2_Unity").GetComponent<AudioSource>();
     }
 
@@ -40,9 +42,10 @@ public class ui : MonoBehaviour
         player = GameObject.Find("Humanoid");
         female = GameObject.Find("cuban_female2_Unity");
         distance = (female.transform.position - player.transform.position).sqrMagnitude;
-        if (distance < radius)
+        if (distance < radius && ffirstReach)
         {
             firstReach = true;
+            ffirstReach = false;
         }
         if (firstReach)
         {
@@ -54,10 +57,10 @@ public class ui : MonoBehaviour
             buttonController();
             firstReach = false;
         }
-      /*  else
+        else
         { 
             buttonController();
-        }*/
+        }
     }
     public void buttonController()
     {
