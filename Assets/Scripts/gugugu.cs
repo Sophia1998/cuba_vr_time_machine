@@ -7,11 +7,11 @@ public class gugugu : MonoBehaviour
 {
     public Animator ani;
     public GameObject bird;
-    public GameObject corn;
     public int random;
     public float walkspeed = 1f;
     public bool feeding;
-    GameObject player;
+    public GameObject player;
+    public ParticleSystem corn;
 
     public float distance;
     public float timeleft;
@@ -21,8 +21,8 @@ public class gugugu : MonoBehaviour
     {
         feeding = false;
         familiar = false;
-        corn = GameObject.Find("Humanoid/corn");
-        corn.SetActive(false);
+        corn.enableEmission = false;
+        corn = (ParticleSystem)gameObject.GetComponent("corn");
         bird = GameObject.Find("Pigeon1");
         player = GameObject.Find("Humanoid");
         ani = bird.GetComponent<Animator>();
@@ -32,12 +32,13 @@ public class gugugu : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
         distance = (transform.position - player.transform.position).sqrMagnitude;
         Debug.Log(distance);
         //if too close and hasn't feed yet, hop away
         if (distance < 15f && familiar == false)
         {
-            corn.SetActive(false);
+            corn.enableEmission = false;
             ani.SetBool("walkforward", false);
             ani.SetBool("walkleft", false);
             ani.SetBool("walkright", false);
@@ -46,9 +47,9 @@ public class gugugu : MonoBehaviour
             transform.Translate(new Vector3(0, 0, 0));
         }
         //for testing if choose to feed 
-        else if (Input.GetKeyDown(KeyCode.RightArrow))
+        else if (Input.GetKeyDown(KeyCode.S))
         {
-            corn.SetActive(true);
+            corn.enableEmission = true;
             ani.SetBool("walkforward", false);
             ani.SetBool("walkleft", false);
             ani.SetBool("walkright", false);
@@ -60,14 +61,13 @@ public class gugugu : MonoBehaviour
         //randomly walk
         else
         {
-            corn.SetActive(false);
+            corn.enableEmission = false;
             ani.SetBool("hop", false);
             random = Random.Range(1, 4);
             if (random == 1)
             {
                 ani.SetBool("walkleft", true);
-                transform.position = transform.position + new Vector3(-0.001f, 0, 0)*Time.deltaTime;
-              //  transform.Rotate(new Vector3(0, 0.005f, 0));
+                transform.position = transform.position + new Vector3(-0.001f, 0, 0)* Time.deltaTime;
             }
             else if (random == 2)
             {
@@ -84,8 +84,8 @@ public class gugugu : MonoBehaviour
         //if feed, fly towards player and eat 
         if(feeding == true)
         {
-            Vector3 direction = player.transform.position - transform.position;
-            Quaternion rotation = Quaternion.LookRotation(direction);
+            //Vector3 direction = player.transform.position - transform.position;
+            Quaternion rotation = Quaternion.LookRotation(new Vector3(0,0,1));
             transform.position = Vector3.MoveTowards(transform.position, player.transform.position, 0.1f*Time.deltaTime);
 
             if (distance < 5f)
