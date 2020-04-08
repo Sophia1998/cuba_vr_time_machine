@@ -11,7 +11,7 @@ public class PigeonFlockScript : MonoBehaviour {
 	public GameObject pigeonFood;
 
 	void Start () {
-		pigeonCount = maxZNum *maxYNum* maxXNum;
+		pigeonCount = 7;
 		pigeons = new GameObject[pigeonCount];
 		for (int k=0; k<maxZNum; k++) {
 			for (int j=0; j<maxYNum; j++) {
