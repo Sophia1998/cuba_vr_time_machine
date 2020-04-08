@@ -16,7 +16,7 @@ public class DebugUISample1 : MonoBehaviour
         DebugUIBuilder.instance.AddButton("Go to the Pub", switchToScenePub);
         DebugUIBuilder.instance.AddButton("Go to the Capitol", switchToSceneCapitol);
         DebugUIBuilder.instance.AddButton("Go to the Beach", switchToSceneBeach);
-        DebugUIBuilder.instance.AddButton("Go to the Square", switchToSceneSquare);
+       // DebugUIBuilder.instance.AddButton("Go to the Square", switchToSceneSquare);
         
         DebugUIBuilder.instance.Show();
         inMenu = true;
@@ -35,10 +35,10 @@ public class DebugUISample1 : MonoBehaviour
     {
         SceneManager.LoadScene("capitol");
     }
-    public void switchToSceneSquare()
+  /*  public void switchToSceneSquare()
     {
         SceneManager.LoadScene("square");
-    }
+    }*/
 
     void Update()
     {

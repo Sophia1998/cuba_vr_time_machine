@@ -8,13 +8,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/menu.unity
     guid: 7e884f78ca81304429deb5381050357e
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Lobby.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
   - enabled: 0
     path: Assets/Scenes/Online.unity
     guid: 9587aaffb6d5bc24ca8de85cc08b2eb6
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/main_menu.unity
     guid: 37a9a0c06d9444c44b415ebc343a3090
   - enabled: 1
@@ -26,7 +26,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/capitol.unity
     guid: f906e232c289dbd47926235770ee84dd
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/square.unity
     guid: 606a0b4f30af53f469f25dbcce7179c0
   m_configObjects: {}
