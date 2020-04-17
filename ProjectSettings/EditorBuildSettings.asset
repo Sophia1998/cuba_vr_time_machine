@@ -17,10 +17,10 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/main_menu.unity
     guid: 37a9a0c06d9444c44b415ebc343a3090
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/pub.unity
     guid: 09c22574d8c30724299836a9e8761790
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/beach.unity
     guid: 0be25e6b86a66d645a62e65f7e48cb09
   - enabled: 0
